@@ -1,0 +1,636 @@
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cci3fulh.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"main.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.main,"ax",%progbits
+  18              		.align	2
+  19              		.global	main
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	main, %function
+  23              	main:
+  24              	.LFB35:
+  25              		.file 1 ".\\main.c"
+   1:.\main.c      **** /* ========================================
+   2:.\main.c      ****  *
+   3:.\main.c      ****  * Copyright YOUR COMPANY, THE YEAR
+   4:.\main.c      ****  * All Rights Reserved
+   5:.\main.c      ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:.\main.c      ****  *
+   7:.\main.c      ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:.\main.c      ****  * WHICH IS THE PROPERTY OF your company.
+   9:.\main.c      ****  *
+  10:.\main.c      ****  * ========================================
+  11:.\main.c      **** */
+  12:.\main.c      **** #include <project.h>
+  13:.\main.c      **** #include <stdint.h>
+  14:.\main.c      **** #include <stdlib.h>
+  15:.\main.c      **** #include <stdio.h>
+  16:.\main.c      **** #include <strings.h>
+  17:.\main.c      **** #include <project.h>
+  18:.\main.c      **** 
+  19:.\main.c      **** int main()
+  20:.\main.c      **** {
+  26              		.loc 1 20 0
+  27              		.cfi_startproc
+  28 0000 08B5     		push	{r3, lr}
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 3, -8
+  31              		.cfi_offset 14, -4
+  21:.\main.c      ****     /* UART buffer to store output to console */
+  22:.\main.c      ****     //char bufferUART[20] = {}; 
+  23:.\main.c      ****     
+  24:.\main.c      ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  32              		.loc 1 24 0
+  33              	@ 24 ".\main.c" 1
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cci3fulh.s 			page 2
+
+
+  34 0002 62B6     		CPSIE   i
+  35              	@ 0 "" 2
+  25:.\main.c      **** 
+  26:.\main.c      ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  27:.\main.c      ****     /* Init the UART module for console debugging */
+  28:.\main.c      ****     UART_Start();  
+  36              		.loc 1 28 0
+  37              		.code	16
+  38 0004 FFF7FEFF 		bl	UART_Start
+  39              	.LVL0:
+  29:.\main.c      ****     UART_UartPutString("PSoC UART Communication Established\n\r");
+  40              		.loc 1 29 0
+  41 0008 0548     		ldr	r0, .L3
+  42 000a FFF7FEFF 		bl	UART_UartPutString
+  43              	.LVL1:
+  44              	.L2:
+  30:.\main.c      **** 
+  31:.\main.c      ****     for(;;)
+  32:.\main.c      ****     {
+  33:.\main.c      ****         /* Place your application code here. */
+  34:.\main.c      ****         UART_UartPutString("REPEAT\n\r");
+  45              		.loc 1 34 0 discriminator 1
+  46 000e 0548     		ldr	r0, .L3+4
+  47 0010 FFF7FEFF 		bl	UART_UartPutString
+  48              	.LVL2:
+  35:.\main.c      ****         CyDelay(500u);
+  49              		.loc 1 35 0 discriminator 1
+  50 0014 FA20     		mov	r0, #250
+  51 0016 4000     		lsl	r0, r0, #1
+  52 0018 FFF7FEFF 		bl	CyDelay
+  53              	.LVL3:
+  36:.\main.c      ****         
+  37:.\main.c      ****     }
+  54              		.loc 1 37 0 discriminator 1
+  55 001c F7E7     		b	.L2
+  56              	.L4:
+  57 001e C046     		.align	2
+  58              	.L3:
+  59 0020 00000000 		.word	.LC0
+  60 0024 28000000 		.word	.LC2
+  61              		.cfi_endproc
+  62              	.LFE35:
+  63              		.size	main, .-main
+  64              		.section	.rodata.str1.4,"aMS",%progbits,1
+  65              		.align	2
+  66              	.LC0:
+  67 0000 50536F43 		.ascii	"PSoC UART Communication Established\012\015\000"
+  67      20554152 
+  67      5420436F 
+  67      6D6D756E 
+  67      69636174 
+  68 0026 0000     		.space	2
+  69              	.LC2:
+  70 0028 52455045 		.ascii	"REPEAT\012\015\000"
+  70      41540A0D 
+  70      00
+  71 0031 000000   		.text
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cci3fulh.s 			page 3
+
+
+  72              	.Letext0:
+  73              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+  74              		.file 3 "Generated_Source\\PSoC4/UART.h"
+  75              		.file 4 "Generated_Source\\PSoC4/UART_SPI_UART.h"
+  76              		.file 5 "Generated_Source\\PSoC4/CyLib.h"
+  77              		.section	.debug_info,"",%progbits
+  78              	.Ldebug_info0:
+  79 0000 2D010000 		.4byte	0x12d
+  80 0004 0400     		.2byte	0x4
+  81 0006 00000000 		.4byte	.Ldebug_abbrev0
+  82 000a 04       		.byte	0x4
+  83 000b 01       		.uleb128 0x1
+  84 000c 07010000 		.4byte	.LASF15
+  85 0010 01       		.byte	0x1
+  86 0011 95010000 		.4byte	.LASF16
+  87 0015 7C000000 		.4byte	.LASF17
+  88 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  89 001d 00000000 		.4byte	0
+  90 0021 00000000 		.4byte	.Ldebug_line0
+  91 0025 02       		.uleb128 0x2
+  92 0026 01       		.byte	0x1
+  93 0027 06       		.byte	0x6
+  94 0028 FB000000 		.4byte	.LASF0
+  95 002c 02       		.uleb128 0x2
+  96 002d 01       		.byte	0x1
+  97 002e 08       		.byte	0x8
+  98 002f 6E000000 		.4byte	.LASF1
+  99 0033 02       		.uleb128 0x2
+ 100 0034 02       		.byte	0x2
+ 101 0035 05       		.byte	0x5
+ 102 0036 D7000000 		.4byte	.LASF2
+ 103 003a 02       		.uleb128 0x2
+ 104 003b 02       		.byte	0x2
+ 105 003c 07       		.byte	0x7
+ 106 003d E8000000 		.4byte	.LASF3
+ 107 0041 02       		.uleb128 0x2
+ 108 0042 04       		.byte	0x4
+ 109 0043 05       		.byte	0x5
+ 110 0044 CE000000 		.4byte	.LASF4
+ 111 0048 02       		.uleb128 0x2
+ 112 0049 04       		.byte	0x4
+ 113 004a 07       		.byte	0x7
+ 114 004b 2F000000 		.4byte	.LASF5
+ 115 004f 02       		.uleb128 0x2
+ 116 0050 08       		.byte	0x8
+ 117 0051 05       		.byte	0x5
+ 118 0052 00000000 		.4byte	.LASF6
+ 119 0056 02       		.uleb128 0x2
+ 120 0057 08       		.byte	0x8
+ 121 0058 07       		.byte	0x7
+ 122 0059 41000000 		.4byte	.LASF7
+ 123 005d 03       		.uleb128 0x3
+ 124 005e 04       		.byte	0x4
+ 125 005f 05       		.byte	0x5
+ 126 0060 696E7400 		.ascii	"int\000"
+ 127 0064 02       		.uleb128 0x2
+ 128 0065 04       		.byte	0x4
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cci3fulh.s 			page 4
+
+
+ 129 0066 07       		.byte	0x7
+ 130 0067 15000000 		.4byte	.LASF8
+ 131 006b 04       		.uleb128 0x4
+ 132 006c 0E000000 		.4byte	.LASF11
+ 133 0070 02       		.byte	0x2
+ 134 0071 C4       		.byte	0xc4
+ 135 0072 48000000 		.4byte	0x48
+ 136 0076 02       		.uleb128 0x2
+ 137 0077 04       		.byte	0x4
+ 138 0078 04       		.byte	0x4
+ 139 0079 58000000 		.4byte	.LASF9
+ 140 007d 02       		.uleb128 0x2
+ 141 007e 08       		.byte	0x8
+ 142 007f 04       		.byte	0x4
+ 143 0080 E1000000 		.4byte	.LASF10
+ 144 0084 04       		.uleb128 0x4
+ 145 0085 BA010000 		.4byte	.LASF12
+ 146 0089 02       		.byte	0x2
+ 147 008a D3       		.byte	0xd3
+ 148 008b 8F000000 		.4byte	0x8f
+ 149 008f 02       		.uleb128 0x2
+ 150 0090 01       		.byte	0x1
+ 151 0091 08       		.byte	0x8
+ 152 0092 5E000000 		.4byte	.LASF13
+ 153 0096 02       		.uleb128 0x2
+ 154 0097 04       		.byte	0x4
+ 155 0098 07       		.byte	0x7
+ 156 0099 B1010000 		.4byte	.LASF14
+ 157 009d 05       		.uleb128 0x5
+ 158 009e 22000000 		.4byte	.LASF18
+ 159 00a2 01       		.byte	0x1
+ 160 00a3 13       		.byte	0x13
+ 161 00a4 5D000000 		.4byte	0x5d
+ 162 00a8 00000000 		.4byte	.LFB35
+ 163 00ac 28000000 		.4byte	.LFE35-.LFB35
+ 164 00b0 01       		.uleb128 0x1
+ 165 00b1 9C       		.byte	0x9c
+ 166 00b2 FF000000 		.4byte	0xff
+ 167 00b6 06       		.uleb128 0x6
+ 168 00b7 08000000 		.4byte	.LVL0
+ 169 00bb FF000000 		.4byte	0xff
+ 170 00bf 07       		.uleb128 0x7
+ 171 00c0 0E000000 		.4byte	.LVL1
+ 172 00c4 06010000 		.4byte	0x106
+ 173 00c8 D6000000 		.4byte	0xd6
+ 174 00cc 08       		.uleb128 0x8
+ 175 00cd 01       		.uleb128 0x1
+ 176 00ce 50       		.byte	0x50
+ 177 00cf 05       		.uleb128 0x5
+ 178 00d0 03       		.byte	0x3
+ 179 00d1 00000000 		.4byte	.LC0
+ 180 00d5 00       		.byte	0
+ 181 00d6 07       		.uleb128 0x7
+ 182 00d7 14000000 		.4byte	.LVL2
+ 183 00db 06010000 		.4byte	0x106
+ 184 00df ED000000 		.4byte	0xed
+ 185 00e3 08       		.uleb128 0x8
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cci3fulh.s 			page 5
+
+
+ 186 00e4 01       		.uleb128 0x1
+ 187 00e5 50       		.byte	0x50
+ 188 00e6 05       		.uleb128 0x5
+ 189 00e7 03       		.byte	0x3
+ 190 00e8 28000000 		.4byte	.LC2
+ 191 00ec 00       		.byte	0
+ 192 00ed 09       		.uleb128 0x9
+ 193 00ee 1C000000 		.4byte	.LVL3
+ 194 00f2 23010000 		.4byte	0x123
+ 195 00f6 08       		.uleb128 0x8
+ 196 00f7 01       		.uleb128 0x1
+ 197 00f8 50       		.byte	0x50
+ 198 00f9 03       		.uleb128 0x3
+ 199 00fa 0A       		.byte	0xa
+ 200 00fb F401     		.2byte	0x1f4
+ 201 00fd 00       		.byte	0
+ 202 00fe 00       		.byte	0
+ 203 00ff 0A       		.uleb128 0xa
+ 204 0100 63000000 		.4byte	.LASF19
+ 205 0104 03       		.byte	0x3
+ 206 0105 68       		.byte	0x68
+ 207 0106 0B       		.uleb128 0xb
+ 208 0107 9E010000 		.4byte	.LASF20
+ 209 010b 04       		.byte	0x4
+ 210 010c 7701     		.2byte	0x177
+ 211 010e 18010000 		.4byte	0x118
+ 212 0112 0C       		.uleb128 0xc
+ 213 0113 18010000 		.4byte	0x118
+ 214 0117 00       		.byte	0
+ 215 0118 0D       		.uleb128 0xd
+ 216 0119 04       		.byte	0x4
+ 217 011a 1E010000 		.4byte	0x11e
+ 218 011e 0E       		.uleb128 0xe
+ 219 011f 84000000 		.4byte	0x84
+ 220 0123 0F       		.uleb128 0xf
+ 221 0124 27000000 		.4byte	.LASF21
+ 222 0128 05       		.byte	0x5
+ 223 0129 57       		.byte	0x57
+ 224 012a 0C       		.uleb128 0xc
+ 225 012b 6B000000 		.4byte	0x6b
+ 226 012f 00       		.byte	0
+ 227 0130 00       		.byte	0
+ 228              		.section	.debug_abbrev,"",%progbits
+ 229              	.Ldebug_abbrev0:
+ 230 0000 01       		.uleb128 0x1
+ 231 0001 11       		.uleb128 0x11
+ 232 0002 01       		.byte	0x1
+ 233 0003 25       		.uleb128 0x25
+ 234 0004 0E       		.uleb128 0xe
+ 235 0005 13       		.uleb128 0x13
+ 236 0006 0B       		.uleb128 0xb
+ 237 0007 03       		.uleb128 0x3
+ 238 0008 0E       		.uleb128 0xe
+ 239 0009 1B       		.uleb128 0x1b
+ 240 000a 0E       		.uleb128 0xe
+ 241 000b 55       		.uleb128 0x55
+ 242 000c 17       		.uleb128 0x17
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cci3fulh.s 			page 6
+
+
+ 243 000d 11       		.uleb128 0x11
+ 244 000e 01       		.uleb128 0x1
+ 245 000f 10       		.uleb128 0x10
+ 246 0010 17       		.uleb128 0x17
+ 247 0011 00       		.byte	0
+ 248 0012 00       		.byte	0
+ 249 0013 02       		.uleb128 0x2
+ 250 0014 24       		.uleb128 0x24
+ 251 0015 00       		.byte	0
+ 252 0016 0B       		.uleb128 0xb
+ 253 0017 0B       		.uleb128 0xb
+ 254 0018 3E       		.uleb128 0x3e
+ 255 0019 0B       		.uleb128 0xb
+ 256 001a 03       		.uleb128 0x3
+ 257 001b 0E       		.uleb128 0xe
+ 258 001c 00       		.byte	0
+ 259 001d 00       		.byte	0
+ 260 001e 03       		.uleb128 0x3
+ 261 001f 24       		.uleb128 0x24
+ 262 0020 00       		.byte	0
+ 263 0021 0B       		.uleb128 0xb
+ 264 0022 0B       		.uleb128 0xb
+ 265 0023 3E       		.uleb128 0x3e
+ 266 0024 0B       		.uleb128 0xb
+ 267 0025 03       		.uleb128 0x3
+ 268 0026 08       		.uleb128 0x8
+ 269 0027 00       		.byte	0
+ 270 0028 00       		.byte	0
+ 271 0029 04       		.uleb128 0x4
+ 272 002a 16       		.uleb128 0x16
+ 273 002b 00       		.byte	0
+ 274 002c 03       		.uleb128 0x3
+ 275 002d 0E       		.uleb128 0xe
+ 276 002e 3A       		.uleb128 0x3a
+ 277 002f 0B       		.uleb128 0xb
+ 278 0030 3B       		.uleb128 0x3b
+ 279 0031 0B       		.uleb128 0xb
+ 280 0032 49       		.uleb128 0x49
+ 281 0033 13       		.uleb128 0x13
+ 282 0034 00       		.byte	0
+ 283 0035 00       		.byte	0
+ 284 0036 05       		.uleb128 0x5
+ 285 0037 2E       		.uleb128 0x2e
+ 286 0038 01       		.byte	0x1
+ 287 0039 3F       		.uleb128 0x3f
+ 288 003a 19       		.uleb128 0x19
+ 289 003b 03       		.uleb128 0x3
+ 290 003c 0E       		.uleb128 0xe
+ 291 003d 3A       		.uleb128 0x3a
+ 292 003e 0B       		.uleb128 0xb
+ 293 003f 3B       		.uleb128 0x3b
+ 294 0040 0B       		.uleb128 0xb
+ 295 0041 49       		.uleb128 0x49
+ 296 0042 13       		.uleb128 0x13
+ 297 0043 11       		.uleb128 0x11
+ 298 0044 01       		.uleb128 0x1
+ 299 0045 12       		.uleb128 0x12
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cci3fulh.s 			page 7
+
+
+ 300 0046 06       		.uleb128 0x6
+ 301 0047 40       		.uleb128 0x40
+ 302 0048 18       		.uleb128 0x18
+ 303 0049 9742     		.uleb128 0x2117
+ 304 004b 19       		.uleb128 0x19
+ 305 004c 01       		.uleb128 0x1
+ 306 004d 13       		.uleb128 0x13
+ 307 004e 00       		.byte	0
+ 308 004f 00       		.byte	0
+ 309 0050 06       		.uleb128 0x6
+ 310 0051 898201   		.uleb128 0x4109
+ 311 0054 00       		.byte	0
+ 312 0055 11       		.uleb128 0x11
+ 313 0056 01       		.uleb128 0x1
+ 314 0057 31       		.uleb128 0x31
+ 315 0058 13       		.uleb128 0x13
+ 316 0059 00       		.byte	0
+ 317 005a 00       		.byte	0
+ 318 005b 07       		.uleb128 0x7
+ 319 005c 898201   		.uleb128 0x4109
+ 320 005f 01       		.byte	0x1
+ 321 0060 11       		.uleb128 0x11
+ 322 0061 01       		.uleb128 0x1
+ 323 0062 31       		.uleb128 0x31
+ 324 0063 13       		.uleb128 0x13
+ 325 0064 01       		.uleb128 0x1
+ 326 0065 13       		.uleb128 0x13
+ 327 0066 00       		.byte	0
+ 328 0067 00       		.byte	0
+ 329 0068 08       		.uleb128 0x8
+ 330 0069 8A8201   		.uleb128 0x410a
+ 331 006c 00       		.byte	0
+ 332 006d 02       		.uleb128 0x2
+ 333 006e 18       		.uleb128 0x18
+ 334 006f 9142     		.uleb128 0x2111
+ 335 0071 18       		.uleb128 0x18
+ 336 0072 00       		.byte	0
+ 337 0073 00       		.byte	0
+ 338 0074 09       		.uleb128 0x9
+ 339 0075 898201   		.uleb128 0x4109
+ 340 0078 01       		.byte	0x1
+ 341 0079 11       		.uleb128 0x11
+ 342 007a 01       		.uleb128 0x1
+ 343 007b 31       		.uleb128 0x31
+ 344 007c 13       		.uleb128 0x13
+ 345 007d 00       		.byte	0
+ 346 007e 00       		.byte	0
+ 347 007f 0A       		.uleb128 0xa
+ 348 0080 2E       		.uleb128 0x2e
+ 349 0081 00       		.byte	0
+ 350 0082 3F       		.uleb128 0x3f
+ 351 0083 19       		.uleb128 0x19
+ 352 0084 03       		.uleb128 0x3
+ 353 0085 0E       		.uleb128 0xe
+ 354 0086 3A       		.uleb128 0x3a
+ 355 0087 0B       		.uleb128 0xb
+ 356 0088 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cci3fulh.s 			page 8
+
+
+ 357 0089 0B       		.uleb128 0xb
+ 358 008a 27       		.uleb128 0x27
+ 359 008b 19       		.uleb128 0x19
+ 360 008c 3C       		.uleb128 0x3c
+ 361 008d 19       		.uleb128 0x19
+ 362 008e 00       		.byte	0
+ 363 008f 00       		.byte	0
+ 364 0090 0B       		.uleb128 0xb
+ 365 0091 2E       		.uleb128 0x2e
+ 366 0092 01       		.byte	0x1
+ 367 0093 3F       		.uleb128 0x3f
+ 368 0094 19       		.uleb128 0x19
+ 369 0095 03       		.uleb128 0x3
+ 370 0096 0E       		.uleb128 0xe
+ 371 0097 3A       		.uleb128 0x3a
+ 372 0098 0B       		.uleb128 0xb
+ 373 0099 3B       		.uleb128 0x3b
+ 374 009a 05       		.uleb128 0x5
+ 375 009b 27       		.uleb128 0x27
+ 376 009c 19       		.uleb128 0x19
+ 377 009d 3C       		.uleb128 0x3c
+ 378 009e 19       		.uleb128 0x19
+ 379 009f 01       		.uleb128 0x1
+ 380 00a0 13       		.uleb128 0x13
+ 381 00a1 00       		.byte	0
+ 382 00a2 00       		.byte	0
+ 383 00a3 0C       		.uleb128 0xc
+ 384 00a4 05       		.uleb128 0x5
+ 385 00a5 00       		.byte	0
+ 386 00a6 49       		.uleb128 0x49
+ 387 00a7 13       		.uleb128 0x13
+ 388 00a8 00       		.byte	0
+ 389 00a9 00       		.byte	0
+ 390 00aa 0D       		.uleb128 0xd
+ 391 00ab 0F       		.uleb128 0xf
+ 392 00ac 00       		.byte	0
+ 393 00ad 0B       		.uleb128 0xb
+ 394 00ae 0B       		.uleb128 0xb
+ 395 00af 49       		.uleb128 0x49
+ 396 00b0 13       		.uleb128 0x13
+ 397 00b1 00       		.byte	0
+ 398 00b2 00       		.byte	0
+ 399 00b3 0E       		.uleb128 0xe
+ 400 00b4 26       		.uleb128 0x26
+ 401 00b5 00       		.byte	0
+ 402 00b6 49       		.uleb128 0x49
+ 403 00b7 13       		.uleb128 0x13
+ 404 00b8 00       		.byte	0
+ 405 00b9 00       		.byte	0
+ 406 00ba 0F       		.uleb128 0xf
+ 407 00bb 2E       		.uleb128 0x2e
+ 408 00bc 01       		.byte	0x1
+ 409 00bd 3F       		.uleb128 0x3f
+ 410 00be 19       		.uleb128 0x19
+ 411 00bf 03       		.uleb128 0x3
+ 412 00c0 0E       		.uleb128 0xe
+ 413 00c1 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cci3fulh.s 			page 9
+
+
+ 414 00c2 0B       		.uleb128 0xb
+ 415 00c3 3B       		.uleb128 0x3b
+ 416 00c4 0B       		.uleb128 0xb
+ 417 00c5 27       		.uleb128 0x27
+ 418 00c6 19       		.uleb128 0x19
+ 419 00c7 3C       		.uleb128 0x3c
+ 420 00c8 19       		.uleb128 0x19
+ 421 00c9 00       		.byte	0
+ 422 00ca 00       		.byte	0
+ 423 00cb 00       		.byte	0
+ 424              		.section	.debug_aranges,"",%progbits
+ 425 0000 1C000000 		.4byte	0x1c
+ 426 0004 0200     		.2byte	0x2
+ 427 0006 00000000 		.4byte	.Ldebug_info0
+ 428 000a 04       		.byte	0x4
+ 429 000b 00       		.byte	0
+ 430 000c 0000     		.2byte	0
+ 431 000e 0000     		.2byte	0
+ 432 0010 00000000 		.4byte	.LFB35
+ 433 0014 28000000 		.4byte	.LFE35-.LFB35
+ 434 0018 00000000 		.4byte	0
+ 435 001c 00000000 		.4byte	0
+ 436              		.section	.debug_ranges,"",%progbits
+ 437              	.Ldebug_ranges0:
+ 438 0000 00000000 		.4byte	.LFB35
+ 439 0004 28000000 		.4byte	.LFE35
+ 440 0008 00000000 		.4byte	0
+ 441 000c 00000000 		.4byte	0
+ 442              		.section	.debug_line,"",%progbits
+ 443              	.Ldebug_line0:
+ 444 0000 92000000 		.section	.debug_str,"MS",%progbits,1
+ 444      02006B00 
+ 444      00000201 
+ 444      FB0E0D00 
+ 444      01010101 
+ 445              	.LASF6:
+ 446 0000 6C6F6E67 		.ascii	"long long int\000"
+ 446      206C6F6E 
+ 446      6720696E 
+ 446      7400
+ 447              	.LASF11:
+ 448 000e 75696E74 		.ascii	"uint32\000"
+ 448      333200
+ 449              	.LASF8:
+ 450 0015 756E7369 		.ascii	"unsigned int\000"
+ 450      676E6564 
+ 450      20696E74 
+ 450      00
+ 451              	.LASF18:
+ 452 0022 6D61696E 		.ascii	"main\000"
+ 452      00
+ 453              	.LASF21:
+ 454 0027 43794465 		.ascii	"CyDelay\000"
+ 454      6C617900 
+ 455              	.LASF5:
+ 456 002f 6C6F6E67 		.ascii	"long unsigned int\000"
+ 456      20756E73 
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cci3fulh.s 			page 10
+
+
+ 456      69676E65 
+ 456      6420696E 
+ 456      7400
+ 457              	.LASF7:
+ 458 0041 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 458      206C6F6E 
+ 458      6720756E 
+ 458      7369676E 
+ 458      65642069 
+ 459              	.LASF9:
+ 460 0058 666C6F61 		.ascii	"float\000"
+ 460      7400
+ 461              	.LASF13:
+ 462 005e 63686172 		.ascii	"char\000"
+ 462      00
+ 463              	.LASF19:
+ 464 0063 55415254 		.ascii	"UART_Start\000"
+ 464      5F537461 
+ 464      727400
+ 465              	.LASF1:
+ 466 006e 756E7369 		.ascii	"unsigned char\000"
+ 466      676E6564 
+ 466      20636861 
+ 466      7200
+ 467              	.LASF17:
+ 468 007c 433A5C55 		.ascii	"C:\\Users\\Henry\\Projects\\electronic_derailleur_e"
+ 468      73657273 
+ 468      5C48656E 
+ 468      72795C50 
+ 468      726F6A65 
+ 469 00ab 6E706834 		.ascii	"nph459\\electronic_derailleur.cydsn\000"
+ 469      35395C65 
+ 469      6C656374 
+ 469      726F6E69 
+ 469      635F6465 
+ 470              	.LASF4:
+ 471 00ce 6C6F6E67 		.ascii	"long int\000"
+ 471      20696E74 
+ 471      00
+ 472              	.LASF2:
+ 473 00d7 73686F72 		.ascii	"short int\000"
+ 473      7420696E 
+ 473      7400
+ 474              	.LASF10:
+ 475 00e1 646F7562 		.ascii	"double\000"
+ 475      6C6500
+ 476              	.LASF3:
+ 477 00e8 73686F72 		.ascii	"short unsigned int\000"
+ 477      7420756E 
+ 477      7369676E 
+ 477      65642069 
+ 477      6E7400
+ 478              	.LASF0:
+ 479 00fb 7369676E 		.ascii	"signed char\000"
+ 479      65642063 
+ 479      68617200 
+ 480              	.LASF15:
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cci3fulh.s 			page 11
+
+
+ 481 0107 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 481      4320342E 
+ 481      392E3320 
+ 481      32303135 
+ 481      30333033 
+ 482 013a 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 482      20726576 
+ 482      6973696F 
+ 482      6E203232 
+ 482      31323230 
+ 483 016d 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 483      66756E63 
+ 483      74696F6E 
+ 483      2D736563 
+ 483      74696F6E 
+ 484              	.LASF16:
+ 485 0195 2E5C6D61 		.ascii	".\\main.c\000"
+ 485      696E2E63 
+ 485      00
+ 486              	.LASF20:
+ 487 019e 55415254 		.ascii	"UART_UartPutString\000"
+ 487      5F556172 
+ 487      74507574 
+ 487      53747269 
+ 487      6E6700
+ 488              	.LASF14:
+ 489 01b1 73697A65 		.ascii	"sizetype\000"
+ 489      74797065 
+ 489      00
+ 490              	.LASF12:
+ 491 01ba 63686172 		.ascii	"char8\000"
+ 491      3800
+ 492              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
