@@ -1,5 +1,5 @@
 # electronic_derailleur
-# 2016-02-13 22:58:53Z
+# 2016-02-14 00:27:04Z
 
 # IO_6@[IOP=(0)][IoId=(6)] is reserved: SWDDebugEnabled
 dont_use_io iocell 0 6
@@ -12,3 +12,11 @@ dont_use_io iocell 6 1
 set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
 set_io "\UART:tx(0)\" iocell 0 5
 set_io "\UART:rx(0)\" iocell 0 4
+set_io "shifter_switches(0)" iocell 1 0
+set_io "shifter_switches(1)" iocell 1 1
+set_io "en_1_2(0)" iocell 3 0
+set_io "en_3_4(0)" iocell 3 1
+set_io "in_1(0)" iocell 0 0
+set_io "in_2(0)" iocell 0 1
+set_io "in_3(0)" iocell 0 2
+set_io "in_4(0)" iocell 0 3
