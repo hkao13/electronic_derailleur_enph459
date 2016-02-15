@@ -1,0 +1,2052 @@
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"front_derail_enc_isr.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.front_derail_enc_isr_Interrupt,"ax",%progbits
+  18              		.align	2
+  19              		.global	front_derail_enc_isr_Interrupt
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	front_derail_enc_isr_Interrupt, %function
+  23              	front_derail_enc_isr_Interrupt:
+  24              	.LFB5:
+  25              		.file 1 ".\\Generated_Source\\PSoC4\\front_derail_enc_isr.c"
+   1:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** /*******************************************************************************
+   2:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * File Name: front_derail_enc_isr.c  
+   3:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Version 1.70
+   4:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+   5:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *  Description:
+   6:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   API for controlling the state of an interrupt.
+   7:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+   8:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+   9:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *  Note:
+  10:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+  11:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** ********************************************************************************
+  12:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Copyright 2008-2015, Cypress Semiconductor Corporation.  All rights reserved.
+  13:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  14:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  15:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * the software package with which this file was provided.
+  16:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *******************************************************************************/
+  17:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+  18:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+  19:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** #include <cydevice_trm.h>
+  20:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** #include <CyLib.h>
+  21:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** #include <front_derail_enc_isr.h>
+  22:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** #include "cyapicallbacks.h"
+  23:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+  24:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** #if !defined(front_derail_enc_isr__REMOVED) /* Check for removal by optimization */
+  25:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+  26:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** /*******************************************************************************
+  27:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *  Place your includes, defines and code here 
+  28:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** ********************************************************************************/
+  29:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** /* `#START front_derail_enc_isr_intc` */
+  30:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+  31:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** /* `#END` */
+  32:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 2
+
+
+  33:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** extern cyisraddress CyRamVectors[CYINT_IRQ_BASE + CY_NUM_INTERRUPTS];
+  34:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+  35:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** /* Declared in startup, used to set unused interrupts to. */
+  36:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** CY_ISR_PROTO(IntDefaultHandler);
+  37:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+  38:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+  39:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** /*******************************************************************************
+  40:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Function Name: front_derail_enc_isr_Start
+  41:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** ********************************************************************************
+  42:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+  43:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Summary:
+  44:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *  Set up the interrupt and enable it. This function disables the interrupt, 
+  45:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *  sets the default interrupt vector, sets the priority from the value in the
+  46:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *  Design Wide Resources Interrupt Editor, then enables the interrupt to the 
+  47:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *  interrupt controller.
+  48:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+  49:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Parameters:  
+  50:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   None
+  51:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+  52:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Return:
+  53:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   None
+  54:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+  55:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *******************************************************************************/
+  56:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** void front_derail_enc_isr_Start(void)
+  57:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** {
+  58:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     /* For all we know the interrupt is active. */
+  59:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     front_derail_enc_isr_Disable();
+  60:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+  61:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     /* Set the ISR to point to the front_derail_enc_isr Interrupt. */
+  62:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     front_derail_enc_isr_SetVector(&front_derail_enc_isr_Interrupt);
+  63:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+  64:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     /* Set the priority. */
+  65:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     front_derail_enc_isr_SetPriority((uint8)front_derail_enc_isr_INTC_PRIOR_NUMBER);
+  66:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+  67:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     /* Enable it. */
+  68:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     front_derail_enc_isr_Enable();
+  69:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** }
+  70:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+  71:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+  72:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** /*******************************************************************************
+  73:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Function Name: front_derail_enc_isr_StartEx
+  74:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** ********************************************************************************
+  75:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+  76:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Summary:
+  77:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *  Sets up the interrupt and enables it. This function disables the interrupt,
+  78:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *  sets the interrupt vector based on the address passed in, sets the priority 
+  79:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *  from the value in the Design Wide Resources Interrupt Editor, then enables 
+  80:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *  the interrupt to the interrupt controller.
+  81:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *  
+  82:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *  When defining ISR functions, the CY_ISR and CY_ISR_PROTO macros should be 
+  83:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *  used to provide consistent definition across compilers:
+  84:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *  
+  85:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *  Function definition example:
+  86:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   CY_ISR(MyISR)
+  87:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   {
+  88:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   }
+  89:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   Function prototype example:
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 3
+
+
+  90:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   CY_ISR_PROTO(MyISR);
+  91:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+  92:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Parameters:  
+  93:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   address: Address of the ISR to set in the interrupt vector table.
+  94:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+  95:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Return:
+  96:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   None
+  97:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+  98:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *******************************************************************************/
+  99:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** void front_derail_enc_isr_StartEx(cyisraddress address)
+ 100:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** {
+ 101:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     /* For all we know the interrupt is active. */
+ 102:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     front_derail_enc_isr_Disable();
+ 103:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 104:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     /* Set the ISR to point to the front_derail_enc_isr Interrupt. */
+ 105:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     front_derail_enc_isr_SetVector(address);
+ 106:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 107:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     /* Set the priority. */
+ 108:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     front_derail_enc_isr_SetPriority((uint8)front_derail_enc_isr_INTC_PRIOR_NUMBER);
+ 109:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 110:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     /* Enable it. */
+ 111:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     front_derail_enc_isr_Enable();
+ 112:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** }
+ 113:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 114:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 115:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** /*******************************************************************************
+ 116:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Function Name: front_derail_enc_isr_Stop
+ 117:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** ********************************************************************************
+ 118:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 119:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Summary:
+ 120:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   Disables and removes the interrupt.
+ 121:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 122:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Parameters:  
+ 123:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   None
+ 124:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 125:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Return:
+ 126:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   None
+ 127:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 128:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *******************************************************************************/
+ 129:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** void front_derail_enc_isr_Stop(void)
+ 130:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** {
+ 131:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     /* Disable this interrupt. */
+ 132:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     front_derail_enc_isr_Disable();
+ 133:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 134:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     /* Set the ISR to point to the passive one. */
+ 135:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     front_derail_enc_isr_SetVector(&IntDefaultHandler);
+ 136:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** }
+ 137:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 138:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 139:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** /*******************************************************************************
+ 140:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Function Name: front_derail_enc_isr_Interrupt
+ 141:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** ********************************************************************************
+ 142:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 143:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Summary:
+ 144:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   The default Interrupt Service Routine for front_derail_enc_isr.
+ 145:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 146:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   Add custom code between the START and END comments to keep the next version
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 4
+
+
+ 147:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   of this file from over-writing your code.
+ 148:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 149:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   Note You may use either the default ISR by using this API, or you may define
+ 150:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   your own separate ISR through ISR_StartEx().
+ 151:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 152:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Parameters:  
+ 153:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   None
+ 154:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 155:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Return:
+ 156:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   None
+ 157:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 158:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *******************************************************************************/
+ 159:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** CY_ISR(front_derail_enc_isr_Interrupt)
+ 160:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** {
+  26              		.loc 1 160 0
+  27              		.cfi_startproc
+ 161:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     #ifdef front_derail_enc_isr_INTERRUPT_INTERRUPT_CALLBACK
+ 162:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****         front_derail_enc_isr_Interrupt_InterruptCallback();
+ 163:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     #endif /* front_derail_enc_isr_INTERRUPT_INTERRUPT_CALLBACK */ 
+ 164:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 165:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     /*  Place your Interrupt code here. */
+ 166:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     /* `#START front_derail_enc_isr_Interrupt` */
+ 167:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 168:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     /* `#END` */
+ 169:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** }
+  28              		.loc 1 169 0
+  29              		@ sp needed
+  30 0000 7047     		bx	lr
+  31              		.cfi_endproc
+  32              	.LFE5:
+  33              		.size	front_derail_enc_isr_Interrupt, .-front_derail_enc_isr_Interrupt
+  34 0002 C046     		.section	.text.front_derail_enc_isr_SetVector,"ax",%progbits
+  35              		.align	2
+  36              		.global	front_derail_enc_isr_SetVector
+  37              		.code	16
+  38              		.thumb_func
+  39              		.type	front_derail_enc_isr_SetVector, %function
+  40              	front_derail_enc_isr_SetVector:
+  41              	.LFB6:
+ 170:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 171:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 172:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** /*******************************************************************************
+ 173:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Function Name: front_derail_enc_isr_SetVector
+ 174:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** ********************************************************************************
+ 175:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 176:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Summary:
+ 177:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   Change the ISR vector for the Interrupt. Note calling front_derail_enc_isr_Start
+ 178:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   will override any effect this method would have had. To set the vector 
+ 179:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   before the component has been started use front_derail_enc_isr_StartEx instead.
+ 180:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * 
+ 181:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   When defining ISR functions, the CY_ISR and CY_ISR_PROTO macros should be 
+ 182:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   used to provide consistent definition across compilers:
+ 183:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 184:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   Function definition example:
+ 185:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   CY_ISR(MyISR)
+ 186:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   {
+ 187:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   }
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 5
+
+
+ 188:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 189:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   Function prototype example:
+ 190:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *     CY_ISR_PROTO(MyISR);
+ 191:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 192:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Parameters:
+ 193:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   address: Address of the ISR to set in the interrupt vector table.
+ 194:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 195:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Return:
+ 196:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   None
+ 197:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 198:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *******************************************************************************/
+ 199:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** void front_derail_enc_isr_SetVector(cyisraddress address)
+ 200:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** {
+  42              		.loc 1 200 0
+  43              		.cfi_startproc
+  44              	.LVL0:
+ 201:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     CyRamVectors[CYINT_IRQ_BASE + front_derail_enc_isr__INTC_NUMBER] = address;
+  45              		.loc 1 201 0
+  46 0000 8423     		mov	r3, #132
+  47 0002 014A     		ldr	r2, .L3
+  48 0004 D050     		str	r0, [r2, r3]
+ 202:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** }
+  49              		.loc 1 202 0
+  50              		@ sp needed
+  51 0006 7047     		bx	lr
+  52              	.L4:
+  53              		.align	2
+  54              	.L3:
+  55 0008 00000000 		.word	CyRamVectors
+  56              		.cfi_endproc
+  57              	.LFE6:
+  58              		.size	front_derail_enc_isr_SetVector, .-front_derail_enc_isr_SetVector
+  59              		.section	.text.front_derail_enc_isr_GetVector,"ax",%progbits
+  60              		.align	2
+  61              		.global	front_derail_enc_isr_GetVector
+  62              		.code	16
+  63              		.thumb_func
+  64              		.type	front_derail_enc_isr_GetVector, %function
+  65              	front_derail_enc_isr_GetVector:
+  66              	.LFB7:
+ 203:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 204:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 205:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** /*******************************************************************************
+ 206:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Function Name: front_derail_enc_isr_GetVector
+ 207:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** ********************************************************************************
+ 208:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 209:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Summary:
+ 210:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   Gets the "address" of the current ISR vector for the Interrupt.
+ 211:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 212:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Parameters:
+ 213:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   None
+ 214:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 215:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Return:
+ 216:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   Address of the ISR in the interrupt vector table.
+ 217:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 218:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *******************************************************************************/
+ 219:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** cyisraddress front_derail_enc_isr_GetVector(void)
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 6
+
+
+ 220:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** {
+  67              		.loc 1 220 0
+  68              		.cfi_startproc
+ 221:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     return CyRamVectors[CYINT_IRQ_BASE + front_derail_enc_isr__INTC_NUMBER];
+  69              		.loc 1 221 0
+  70 0000 8423     		mov	r3, #132
+  71 0002 014A     		ldr	r2, .L6
+  72 0004 D058     		ldr	r0, [r2, r3]
+ 222:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** }
+  73              		.loc 1 222 0
+  74              		@ sp needed
+  75 0006 7047     		bx	lr
+  76              	.L7:
+  77              		.align	2
+  78              	.L6:
+  79 0008 00000000 		.word	CyRamVectors
+  80              		.cfi_endproc
+  81              	.LFE7:
+  82              		.size	front_derail_enc_isr_GetVector, .-front_derail_enc_isr_GetVector
+  83              		.section	.text.front_derail_enc_isr_SetPriority,"ax",%progbits
+  84              		.align	2
+  85              		.global	front_derail_enc_isr_SetPriority
+  86              		.code	16
+  87              		.thumb_func
+  88              		.type	front_derail_enc_isr_SetPriority, %function
+  89              	front_derail_enc_isr_SetPriority:
+  90              	.LFB8:
+ 223:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 224:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 225:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** /*******************************************************************************
+ 226:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Function Name: front_derail_enc_isr_SetPriority
+ 227:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** ********************************************************************************
+ 228:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 229:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Summary:
+ 230:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   Sets the Priority of the Interrupt. 
+ 231:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 232:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   Note calling front_derail_enc_isr_Start or front_derail_enc_isr_StartEx will 
+ 233:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   override any effect this API would have had. This API should only be called
+ 234:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   after front_derail_enc_isr_Start or front_derail_enc_isr_StartEx has been called. 
+ 235:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   To set the initial priority for the component, use the Design-Wide Resources
+ 236:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   Interrupt Editor.
+ 237:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 238:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   Note This API has no effect on Non-maskable interrupt NMI).
+ 239:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 240:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Parameters:
+ 241:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   priority: Priority of the interrupt, 0 being the highest priority
+ 242:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *             PSoC 3 and PSoC 5LP: Priority is from 0 to 7.
+ 243:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *             PSoC 4: Priority is from 0 to 3.
+ 244:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 245:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Return:
+ 246:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   None
+ 247:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 248:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *******************************************************************************/
+ 249:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** void front_derail_enc_isr_SetPriority(uint8 priority)
+ 250:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** {
+  91              		.loc 1 250 0
+  92              		.cfi_startproc
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 7
+
+
+  93              	.LVL1:
+  94 0000 10B5     		push	{r4, lr}
+  95              		.cfi_def_cfa_offset 8
+  96              		.cfi_offset 4, -8
+  97              		.cfi_offset 14, -4
+  98 0002 041C     		mov	r4, r0
+  99              	.LVL2:
+ 251:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 	uint8 interruptState;
+ 252:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     uint32 priorityOffset = ((front_derail_enc_isr__INTC_NUMBER % 4u) * 8u) + 6u;
+ 253:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     
+ 254:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 	interruptState = CyEnterCriticalSection();
+ 100              		.loc 1 254 0
+ 101 0004 FFF7FEFF 		bl	CyEnterCriticalSection
+ 102              	.LVL3:
+ 255:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     *front_derail_enc_isr_INTC_PRIOR = (*front_derail_enc_isr_INTC_PRIOR & (uint32)(~front_derail_e
+ 103              		.loc 1 255 0
+ 104 0008 044A     		ldr	r2, .L9
+ 105 000a 1168     		ldr	r1, [r2]
+ 106 000c 044B     		ldr	r3, .L9+4
+ 107 000e 0B40     		and	r3, r1
+ 256:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****                                     ((uint32)priority << priorityOffset);
+ 108              		.loc 1 256 0
+ 109 0010 A403     		lsl	r4, r4, #14
+ 255:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     *front_derail_enc_isr_INTC_PRIOR = (*front_derail_enc_isr_INTC_PRIOR & (uint32)(~front_derail_e
+ 110              		.loc 1 255 0
+ 111 0012 1C43     		orr	r4, r3
+ 112 0014 1460     		str	r4, [r2]
+ 257:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 	CyExitCriticalSection(interruptState);
+ 113              		.loc 1 257 0
+ 114 0016 FFF7FEFF 		bl	CyExitCriticalSection
+ 115              	.LVL4:
+ 258:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** }
+ 116              		.loc 1 258 0
+ 117              		@ sp needed
+ 118 001a 10BD     		pop	{r4, pc}
+ 119              	.L10:
+ 120              		.align	2
+ 121              	.L9:
+ 122 001c 10E400E0 		.word	-536812528
+ 123 0020 FF3FFFFF 		.word	-49153
+ 124              		.cfi_endproc
+ 125              	.LFE8:
+ 126              		.size	front_derail_enc_isr_SetPriority, .-front_derail_enc_isr_SetPriority
+ 127              		.section	.text.front_derail_enc_isr_GetPriority,"ax",%progbits
+ 128              		.align	2
+ 129              		.global	front_derail_enc_isr_GetPriority
+ 130              		.code	16
+ 131              		.thumb_func
+ 132              		.type	front_derail_enc_isr_GetPriority, %function
+ 133              	front_derail_enc_isr_GetPriority:
+ 134              	.LFB9:
+ 259:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 260:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 261:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** /*******************************************************************************
+ 262:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Function Name: front_derail_enc_isr_GetPriority
+ 263:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** ********************************************************************************
+ 264:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 8
+
+
+ 265:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Summary:
+ 266:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   Gets the Priority of the Interrupt.
+ 267:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 268:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Parameters:
+ 269:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   None
+ 270:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 271:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Return:
+ 272:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   Priority of the interrupt, 0 being the highest priority
+ 273:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *    PSoC 3 and PSoC 5LP: Priority is from 0 to 7.
+ 274:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *    PSoC 4: Priority is from 0 to 3.
+ 275:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 276:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *******************************************************************************/
+ 277:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** uint8 front_derail_enc_isr_GetPriority(void)
+ 278:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** {
+ 135              		.loc 1 278 0
+ 136              		.cfi_startproc
+ 137              	.LVL5:
+ 279:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     uint32 priority;
+ 280:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 	uint32 priorityOffset = ((front_derail_enc_isr__INTC_NUMBER % 4u) * 8u) + 6u;
+ 281:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 282:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     priority = (*front_derail_enc_isr_INTC_PRIOR & front_derail_enc_isr__INTC_PRIOR_MASK) >> priori
+ 138              		.loc 1 282 0
+ 139 0000 024B     		ldr	r3, .L12
+ 140 0002 1868     		ldr	r0, [r3]
+ 141 0004 0004     		lsl	r0, r0, #16
+ 142              	.LVL6:
+ 283:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 284:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     return (uint8)priority;
+ 143              		.loc 1 284 0
+ 144 0006 800F     		lsr	r0, r0, #30
+ 145              	.LVL7:
+ 285:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** }
+ 146              		.loc 1 285 0
+ 147              		@ sp needed
+ 148 0008 7047     		bx	lr
+ 149              	.L13:
+ 150 000a C046     		.align	2
+ 151              	.L12:
+ 152 000c 10E400E0 		.word	-536812528
+ 153              		.cfi_endproc
+ 154              	.LFE9:
+ 155              		.size	front_derail_enc_isr_GetPriority, .-front_derail_enc_isr_GetPriority
+ 156              		.section	.text.front_derail_enc_isr_Enable,"ax",%progbits
+ 157              		.align	2
+ 158              		.global	front_derail_enc_isr_Enable
+ 159              		.code	16
+ 160              		.thumb_func
+ 161              		.type	front_derail_enc_isr_Enable, %function
+ 162              	front_derail_enc_isr_Enable:
+ 163              	.LFB10:
+ 286:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 287:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 288:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** /*******************************************************************************
+ 289:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Function Name: front_derail_enc_isr_Enable
+ 290:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** ********************************************************************************
+ 291:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 292:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Summary:
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 9
+
+
+ 293:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   Enables the interrupt to the interrupt controller. Do not call this function
+ 294:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   unless ISR_Start() has been called or the functionality of the ISR_Start() 
+ 295:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   function, which sets the vector and the priority, has been called.
+ 296:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 297:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Parameters:
+ 298:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   None
+ 299:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 300:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Return:
+ 301:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   None
+ 302:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 303:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *******************************************************************************/
+ 304:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** void front_derail_enc_isr_Enable(void)
+ 305:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** {
+ 164              		.loc 1 305 0
+ 165              		.cfi_startproc
+ 306:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     /* Enable the general interrupt. */
+ 307:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     *front_derail_enc_isr_INTC_SET_EN = front_derail_enc_isr__INTC_MASK;
+ 166              		.loc 1 307 0
+ 167 0000 8022     		mov	r2, #128
+ 168 0002 9202     		lsl	r2, r2, #10
+ 169 0004 014B     		ldr	r3, .L15
+ 170 0006 1A60     		str	r2, [r3]
+ 308:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** }
+ 171              		.loc 1 308 0
+ 172              		@ sp needed
+ 173 0008 7047     		bx	lr
+ 174              	.L16:
+ 175 000a C046     		.align	2
+ 176              	.L15:
+ 177 000c 00E100E0 		.word	-536813312
+ 178              		.cfi_endproc
+ 179              	.LFE10:
+ 180              		.size	front_derail_enc_isr_Enable, .-front_derail_enc_isr_Enable
+ 181              		.section	.text.front_derail_enc_isr_GetState,"ax",%progbits
+ 182              		.align	2
+ 183              		.global	front_derail_enc_isr_GetState
+ 184              		.code	16
+ 185              		.thumb_func
+ 186              		.type	front_derail_enc_isr_GetState, %function
+ 187              	front_derail_enc_isr_GetState:
+ 188              	.LFB11:
+ 309:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 310:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 311:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** /*******************************************************************************
+ 312:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Function Name: front_derail_enc_isr_GetState
+ 313:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** ********************************************************************************
+ 314:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 315:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Summary:
+ 316:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   Gets the state (enabled, disabled) of the Interrupt.
+ 317:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 318:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Parameters:
+ 319:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   None
+ 320:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 321:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Return:
+ 322:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   1 if enabled, 0 if disabled.
+ 323:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 324:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *******************************************************************************/
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 10
+
+
+ 325:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** uint8 front_derail_enc_isr_GetState(void)
+ 326:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** {
+ 189              		.loc 1 326 0
+ 190              		.cfi_startproc
+ 327:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     /* Get the state of the general interrupt. */
+ 328:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     return ((*front_derail_enc_isr_INTC_SET_EN & (uint32)front_derail_enc_isr__INTC_MASK) != 0u) ? 
+ 191              		.loc 1 328 0
+ 192 0000 034B     		ldr	r3, .L20
+ 193 0002 1B68     		ldr	r3, [r3]
+ 194 0004 9B03     		lsl	r3, r3, #14
+ 195 0006 01D5     		bpl	.L19
+ 196 0008 0120     		mov	r0, #1
+ 197 000a 00E0     		b	.L18
+ 198              	.L19:
+ 199 000c 0020     		mov	r0, #0
+ 200              	.L18:
+ 329:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** }
+ 201              		.loc 1 329 0 discriminator 4
+ 202              		@ sp needed
+ 203 000e 7047     		bx	lr
+ 204              	.L21:
+ 205              		.align	2
+ 206              	.L20:
+ 207 0010 00E100E0 		.word	-536813312
+ 208              		.cfi_endproc
+ 209              	.LFE11:
+ 210              		.size	front_derail_enc_isr_GetState, .-front_derail_enc_isr_GetState
+ 211              		.section	.text.front_derail_enc_isr_Disable,"ax",%progbits
+ 212              		.align	2
+ 213              		.global	front_derail_enc_isr_Disable
+ 214              		.code	16
+ 215              		.thumb_func
+ 216              		.type	front_derail_enc_isr_Disable, %function
+ 217              	front_derail_enc_isr_Disable:
+ 218              	.LFB12:
+ 330:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 331:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 332:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** /*******************************************************************************
+ 333:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Function Name: front_derail_enc_isr_Disable
+ 334:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** ********************************************************************************
+ 335:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 336:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Summary:
+ 337:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   Disables the Interrupt in the interrupt controller.
+ 338:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 339:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Parameters:
+ 340:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   None
+ 341:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 342:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Return:
+ 343:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   None
+ 344:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 345:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *******************************************************************************/
+ 346:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** void front_derail_enc_isr_Disable(void)
+ 347:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** {
+ 219              		.loc 1 347 0
+ 220              		.cfi_startproc
+ 348:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     /* Disable the general interrupt. */
+ 349:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     *front_derail_enc_isr_INTC_CLR_EN = front_derail_enc_isr__INTC_MASK;
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 11
+
+
+ 221              		.loc 1 349 0
+ 222 0000 8022     		mov	r2, #128
+ 223 0002 9202     		lsl	r2, r2, #10
+ 224 0004 014B     		ldr	r3, .L23
+ 225 0006 1A60     		str	r2, [r3]
+ 350:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** }
+ 226              		.loc 1 350 0
+ 227              		@ sp needed
+ 228 0008 7047     		bx	lr
+ 229              	.L24:
+ 230 000a C046     		.align	2
+ 231              	.L23:
+ 232 000c 80E100E0 		.word	-536813184
+ 233              		.cfi_endproc
+ 234              	.LFE12:
+ 235              		.size	front_derail_enc_isr_Disable, .-front_derail_enc_isr_Disable
+ 236              		.section	.text.front_derail_enc_isr_Start,"ax",%progbits
+ 237              		.align	2
+ 238              		.global	front_derail_enc_isr_Start
+ 239              		.code	16
+ 240              		.thumb_func
+ 241              		.type	front_derail_enc_isr_Start, %function
+ 242              	front_derail_enc_isr_Start:
+ 243              	.LFB2:
+  57:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     /* For all we know the interrupt is active. */
+ 244              		.loc 1 57 0
+ 245              		.cfi_startproc
+ 246 0000 08B5     		push	{r3, lr}
+ 247              		.cfi_def_cfa_offset 8
+ 248              		.cfi_offset 3, -8
+ 249              		.cfi_offset 14, -4
+  59:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 250              		.loc 1 59 0
+ 251 0002 FFF7FEFF 		bl	front_derail_enc_isr_Disable
+ 252              	.LVL8:
+  62:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 253              		.loc 1 62 0
+ 254 0006 0448     		ldr	r0, .L26
+ 255 0008 FFF7FEFF 		bl	front_derail_enc_isr_SetVector
+ 256              	.LVL9:
+  65:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 257              		.loc 1 65 0
+ 258 000c 0320     		mov	r0, #3
+ 259 000e FFF7FEFF 		bl	front_derail_enc_isr_SetPriority
+ 260              	.LVL10:
+  68:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** }
+ 261              		.loc 1 68 0
+ 262 0012 FFF7FEFF 		bl	front_derail_enc_isr_Enable
+ 263              	.LVL11:
+  69:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 264              		.loc 1 69 0
+ 265              		@ sp needed
+ 266 0016 08BD     		pop	{r3, pc}
+ 267              	.L27:
+ 268              		.align	2
+ 269              	.L26:
+ 270 0018 00000000 		.word	front_derail_enc_isr_Interrupt
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 12
+
+
+ 271              		.cfi_endproc
+ 272              	.LFE2:
+ 273              		.size	front_derail_enc_isr_Start, .-front_derail_enc_isr_Start
+ 274              		.section	.text.front_derail_enc_isr_StartEx,"ax",%progbits
+ 275              		.align	2
+ 276              		.global	front_derail_enc_isr_StartEx
+ 277              		.code	16
+ 278              		.thumb_func
+ 279              		.type	front_derail_enc_isr_StartEx, %function
+ 280              	front_derail_enc_isr_StartEx:
+ 281              	.LFB3:
+ 100:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     /* For all we know the interrupt is active. */
+ 282              		.loc 1 100 0
+ 283              		.cfi_startproc
+ 284              	.LVL12:
+ 285 0000 10B5     		push	{r4, lr}
+ 286              		.cfi_def_cfa_offset 8
+ 287              		.cfi_offset 4, -8
+ 288              		.cfi_offset 14, -4
+ 289 0002 041C     		mov	r4, r0
+ 102:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 290              		.loc 1 102 0
+ 291 0004 FFF7FEFF 		bl	front_derail_enc_isr_Disable
+ 292              	.LVL13:
+ 105:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 293              		.loc 1 105 0
+ 294 0008 201C     		mov	r0, r4
+ 295 000a FFF7FEFF 		bl	front_derail_enc_isr_SetVector
+ 296              	.LVL14:
+ 108:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 297              		.loc 1 108 0
+ 298 000e 0320     		mov	r0, #3
+ 299 0010 FFF7FEFF 		bl	front_derail_enc_isr_SetPriority
+ 300              	.LVL15:
+ 111:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** }
+ 301              		.loc 1 111 0
+ 302 0014 FFF7FEFF 		bl	front_derail_enc_isr_Enable
+ 303              	.LVL16:
+ 112:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 304              		.loc 1 112 0
+ 305              		@ sp needed
+ 306              	.LVL17:
+ 307 0018 10BD     		pop	{r4, pc}
+ 308              		.cfi_endproc
+ 309              	.LFE3:
+ 310              		.size	front_derail_enc_isr_StartEx, .-front_derail_enc_isr_StartEx
+ 311 001a C046     		.section	.text.front_derail_enc_isr_Stop,"ax",%progbits
+ 312              		.align	2
+ 313              		.global	front_derail_enc_isr_Stop
+ 314              		.code	16
+ 315              		.thumb_func
+ 316              		.type	front_derail_enc_isr_Stop, %function
+ 317              	front_derail_enc_isr_Stop:
+ 318              	.LFB4:
+ 130:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     /* Disable this interrupt. */
+ 319              		.loc 1 130 0
+ 320              		.cfi_startproc
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 13
+
+
+ 321 0000 08B5     		push	{r3, lr}
+ 322              		.cfi_def_cfa_offset 8
+ 323              		.cfi_offset 3, -8
+ 324              		.cfi_offset 14, -4
+ 132:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 325              		.loc 1 132 0
+ 326 0002 FFF7FEFF 		bl	front_derail_enc_isr_Disable
+ 327              	.LVL18:
+ 135:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** }
+ 328              		.loc 1 135 0
+ 329 0006 0248     		ldr	r0, .L30
+ 330 0008 FFF7FEFF 		bl	front_derail_enc_isr_SetVector
+ 331              	.LVL19:
+ 136:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 332              		.loc 1 136 0
+ 333              		@ sp needed
+ 334 000c 08BD     		pop	{r3, pc}
+ 335              	.L31:
+ 336 000e C046     		.align	2
+ 337              	.L30:
+ 338 0010 00000000 		.word	IntDefaultHandler
+ 339              		.cfi_endproc
+ 340              	.LFE4:
+ 341              		.size	front_derail_enc_isr_Stop, .-front_derail_enc_isr_Stop
+ 342              		.section	.text.front_derail_enc_isr_SetPending,"ax",%progbits
+ 343              		.align	2
+ 344              		.global	front_derail_enc_isr_SetPending
+ 345              		.code	16
+ 346              		.thumb_func
+ 347              		.type	front_derail_enc_isr_SetPending, %function
+ 348              	front_derail_enc_isr_SetPending:
+ 349              	.LFB13:
+ 351:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 352:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 353:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** /*******************************************************************************
+ 354:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Function Name: front_derail_enc_isr_SetPending
+ 355:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** ********************************************************************************
+ 356:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 357:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Summary:
+ 358:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   Causes the Interrupt to enter the pending state, a software method of
+ 359:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   generating the interrupt.
+ 360:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 361:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Parameters:
+ 362:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   None
+ 363:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 364:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Return:
+ 365:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   None
+ 366:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 367:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Side Effects:
+ 368:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   If interrupts are enabled and the interrupt is set up properly, the ISR is
+ 369:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   entered (depending on the priority of this interrupt and other pending 
+ 370:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   interrupts).
+ 371:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 372:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *******************************************************************************/
+ 373:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** void front_derail_enc_isr_SetPending(void)
+ 374:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** {
+ 350              		.loc 1 374 0
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 14
+
+
+ 351              		.cfi_startproc
+ 375:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     *front_derail_enc_isr_INTC_SET_PD = front_derail_enc_isr__INTC_MASK;
+ 352              		.loc 1 375 0
+ 353 0000 8022     		mov	r2, #128
+ 354 0002 9202     		lsl	r2, r2, #10
+ 355 0004 014B     		ldr	r3, .L33
+ 356 0006 1A60     		str	r2, [r3]
+ 376:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** }
+ 357              		.loc 1 376 0
+ 358              		@ sp needed
+ 359 0008 7047     		bx	lr
+ 360              	.L34:
+ 361 000a C046     		.align	2
+ 362              	.L33:
+ 363 000c 00E200E0 		.word	-536813056
+ 364              		.cfi_endproc
+ 365              	.LFE13:
+ 366              		.size	front_derail_enc_isr_SetPending, .-front_derail_enc_isr_SetPending
+ 367              		.section	.text.front_derail_enc_isr_ClearPending,"ax",%progbits
+ 368              		.align	2
+ 369              		.global	front_derail_enc_isr_ClearPending
+ 370              		.code	16
+ 371              		.thumb_func
+ 372              		.type	front_derail_enc_isr_ClearPending, %function
+ 373              	front_derail_enc_isr_ClearPending:
+ 374              	.LFB14:
+ 377:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 378:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** 
+ 379:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** /*******************************************************************************
+ 380:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Function Name: front_derail_enc_isr_ClearPending
+ 381:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** ********************************************************************************
+ 382:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 383:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Summary:
+ 384:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   Clears a pending interrupt in the interrupt controller.
+ 385:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 386:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   Note Some interrupt sources are clear-on-read and require the block 
+ 387:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   interrupt/status register to be read/cleared with the appropriate block API 
+ 388:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   (GPIO, UART, and so on). Otherwise the ISR will continue to remain in 
+ 389:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   pending state even though the interrupt itself is cleared using this API.
+ 390:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 391:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Parameters:
+ 392:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   None
+ 393:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 394:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** * Return:
+ 395:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *   None
+ 396:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *
+ 397:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** *******************************************************************************/
+ 398:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** void front_derail_enc_isr_ClearPending(void)
+ 399:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** {
+ 375              		.loc 1 399 0
+ 376              		.cfi_startproc
+ 400:.\Generated_Source\PSoC4/front_derail_enc_isr.c ****     *front_derail_enc_isr_INTC_CLR_PD = front_derail_enc_isr__INTC_MASK;
+ 377              		.loc 1 400 0
+ 378 0000 8022     		mov	r2, #128
+ 379 0002 9202     		lsl	r2, r2, #10
+ 380 0004 014B     		ldr	r3, .L36
+ 381 0006 1A60     		str	r2, [r3]
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 15
+
+
+ 401:.\Generated_Source\PSoC4/front_derail_enc_isr.c **** }
+ 382              		.loc 1 401 0
+ 383              		@ sp needed
+ 384 0008 7047     		bx	lr
+ 385              	.L37:
+ 386 000a C046     		.align	2
+ 387              	.L36:
+ 388 000c 80E200E0 		.word	-536812928
+ 389              		.cfi_endproc
+ 390              	.LFE14:
+ 391              		.size	front_derail_enc_isr_ClearPending, .-front_derail_enc_isr_ClearPending
+ 392              		.text
+ 393              	.Letext0:
+ 394              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 395              		.file 3 "Generated_Source\\PSoC4/CyLib.h"
+ 396              		.section	.debug_info,"",%progbits
+ 397              	.Ldebug_info0:
+ 398 0000 FA020000 		.4byte	0x2fa
+ 399 0004 0400     		.2byte	0x4
+ 400 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 401 000a 04       		.byte	0x4
+ 402 000b 01       		.uleb128 0x1
+ 403 000c B7020000 		.4byte	.LASF33
+ 404 0010 01       		.byte	0x1
+ 405 0011 4F030000 		.4byte	.LASF34
+ 406 0015 72000000 		.4byte	.LASF35
+ 407 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 408 001d 00000000 		.4byte	0
+ 409 0021 00000000 		.4byte	.Ldebug_line0
+ 410 0025 02       		.uleb128 0x2
+ 411 0026 01       		.byte	0x1
+ 412 0027 06       		.byte	0x6
+ 413 0028 B6030000 		.4byte	.LASF0
+ 414 002c 02       		.uleb128 0x2
+ 415 002d 01       		.byte	0x1
+ 416 002e 08       		.byte	0x8
+ 417 002f 54010000 		.4byte	.LASF1
+ 418 0033 02       		.uleb128 0x2
+ 419 0034 02       		.byte	0x2
+ 420 0035 05       		.byte	0x5
+ 421 0036 45030000 		.4byte	.LASF2
+ 422 003a 02       		.uleb128 0x2
+ 423 003b 02       		.byte	0x2
+ 424 003c 07       		.byte	0x7
+ 425 003d 21000000 		.4byte	.LASF3
+ 426 0041 02       		.uleb128 0x2
+ 427 0042 04       		.byte	0x4
+ 428 0043 05       		.byte	0x5
+ 429 0044 8E030000 		.4byte	.LASF4
+ 430 0048 02       		.uleb128 0x2
+ 431 0049 04       		.byte	0x4
+ 432 004a 07       		.byte	0x7
+ 433 004b 71010000 		.4byte	.LASF5
+ 434 004f 02       		.uleb128 0x2
+ 435 0050 08       		.byte	0x8
+ 436 0051 05       		.byte	0x5
+ 437 0052 68020000 		.4byte	.LASF6
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 16
+
+
+ 438 0056 02       		.uleb128 0x2
+ 439 0057 08       		.byte	0x8
+ 440 0058 07       		.byte	0x7
+ 441 0059 1B010000 		.4byte	.LASF7
+ 442 005d 03       		.uleb128 0x3
+ 443 005e 04       		.byte	0x4
+ 444 005f 05       		.byte	0x5
+ 445 0060 696E7400 		.ascii	"int\000"
+ 446 0064 02       		.uleb128 0x2
+ 447 0065 04       		.byte	0x4
+ 448 0066 07       		.byte	0x7
+ 449 0067 E0010000 		.4byte	.LASF8
+ 450 006b 04       		.uleb128 0x4
+ 451 006c 83010000 		.4byte	.LASF9
+ 452 0070 02       		.byte	0x2
+ 453 0071 C2       		.byte	0xc2
+ 454 0072 2C000000 		.4byte	0x2c
+ 455 0076 04       		.uleb128 0x4
+ 456 0077 B8010000 		.4byte	.LASF10
+ 457 007b 02       		.byte	0x2
+ 458 007c C4       		.byte	0xc4
+ 459 007d 48000000 		.4byte	0x48
+ 460 0081 02       		.uleb128 0x2
+ 461 0082 04       		.byte	0x4
+ 462 0083 04       		.byte	0x4
+ 463 0084 13000000 		.4byte	.LASF11
+ 464 0088 02       		.uleb128 0x2
+ 465 0089 08       		.byte	0x8
+ 466 008a 04       		.byte	0x4
+ 467 008b B1010000 		.4byte	.LASF12
+ 468 008f 02       		.uleb128 0x2
+ 469 0090 01       		.byte	0x1
+ 470 0091 08       		.byte	0x8
+ 471 0092 76020000 		.4byte	.LASF13
+ 472 0096 05       		.uleb128 0x5
+ 473 0097 00000000 		.4byte	.LASF14
+ 474 009b 02       		.byte	0x2
+ 475 009c 6E01     		.2byte	0x16e
+ 476 009e A2000000 		.4byte	0xa2
+ 477 00a2 06       		.uleb128 0x6
+ 478 00a3 76000000 		.4byte	0x76
+ 479 00a7 05       		.uleb128 0x5
+ 480 00a8 37020000 		.4byte	.LASF15
+ 481 00ac 02       		.byte	0x2
+ 482 00ad 7E01     		.2byte	0x17e
+ 483 00af B3000000 		.4byte	0xb3
+ 484 00b3 07       		.uleb128 0x7
+ 485 00b4 04       		.byte	0x4
+ 486 00b5 B9000000 		.4byte	0xb9
+ 487 00b9 08       		.uleb128 0x8
+ 488 00ba 02       		.uleb128 0x2
+ 489 00bb 04       		.byte	0x4
+ 490 00bc 07       		.byte	0x7
+ 491 00bd 5F020000 		.4byte	.LASF16
+ 492 00c1 09       		.uleb128 0x9
+ 493 00c2 97030000 		.4byte	.LASF23
+ 494 00c6 01       		.byte	0x1
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 17
+
+
+ 495 00c7 9F       		.byte	0x9f
+ 496 00c8 00000000 		.4byte	.LFB5
+ 497 00cc 02000000 		.4byte	.LFE5-.LFB5
+ 498 00d0 01       		.uleb128 0x1
+ 499 00d1 9C       		.byte	0x9c
+ 500 00d2 0A       		.uleb128 0xa
+ 501 00d3 89010000 		.4byte	.LASF17
+ 502 00d7 01       		.byte	0x1
+ 503 00d8 C7       		.byte	0xc7
+ 504 00d9 00000000 		.4byte	.LFB6
+ 505 00dd 0C000000 		.4byte	.LFE6-.LFB6
+ 506 00e1 01       		.uleb128 0x1
+ 507 00e2 9C       		.byte	0x9c
+ 508 00e3 F5000000 		.4byte	0xf5
+ 509 00e7 0B       		.uleb128 0xb
+ 510 00e8 19000000 		.4byte	.LASF19
+ 511 00ec 01       		.byte	0x1
+ 512 00ed C7       		.byte	0xc7
+ 513 00ee A7000000 		.4byte	0xa7
+ 514 00f2 01       		.uleb128 0x1
+ 515 00f3 50       		.byte	0x50
+ 516 00f4 00       		.byte	0
+ 517 00f5 0C       		.uleb128 0xc
+ 518 00f6 98020000 		.4byte	.LASF25
+ 519 00fa 01       		.byte	0x1
+ 520 00fb DB       		.byte	0xdb
+ 521 00fc A7000000 		.4byte	0xa7
+ 522 0100 00000000 		.4byte	.LFB7
+ 523 0104 0C000000 		.4byte	.LFE7-.LFB7
+ 524 0108 01       		.uleb128 0x1
+ 525 0109 9C       		.byte	0x9c
+ 526 010a 0A       		.uleb128 0xa
+ 527 010b BF010000 		.4byte	.LASF18
+ 528 010f 01       		.byte	0x1
+ 529 0110 F9       		.byte	0xf9
+ 530 0111 00000000 		.4byte	.LFB8
+ 531 0115 24000000 		.4byte	.LFE8-.LFB8
+ 532 0119 01       		.uleb128 0x1
+ 533 011a 9C       		.byte	0x9c
+ 534 011b 5C010000 		.4byte	0x15c
+ 535 011f 0D       		.uleb128 0xd
+ 536 0120 A8010000 		.4byte	.LASF20
+ 537 0124 01       		.byte	0x1
+ 538 0125 F9       		.byte	0xf9
+ 539 0126 6B000000 		.4byte	0x6b
+ 540 012a 00000000 		.4byte	.LLST0
+ 541 012e 0E       		.uleb128 0xe
+ 542 012f 62010000 		.4byte	.LASF21
+ 543 0133 01       		.byte	0x1
+ 544 0134 FB       		.byte	0xfb
+ 545 0135 6B000000 		.4byte	0x6b
+ 546 0139 21000000 		.4byte	.LLST1
+ 547 013d 0F       		.uleb128 0xf
+ 548 013e 7F030000 		.4byte	.LASF22
+ 549 0142 01       		.byte	0x1
+ 550 0143 FC       		.byte	0xfc
+ 551 0144 76000000 		.4byte	0x76
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 18
+
+
+ 552 0148 0E       		.byte	0xe
+ 553 0149 10       		.uleb128 0x10
+ 554 014a 08000000 		.4byte	.LVL3
+ 555 014e E5020000 		.4byte	0x2e5
+ 556 0152 10       		.uleb128 0x10
+ 557 0153 1A000000 		.4byte	.LVL4
+ 558 0157 F0020000 		.4byte	0x2f0
+ 559 015b 00       		.byte	0
+ 560 015c 11       		.uleb128 0x11
+ 561 015d FA000000 		.4byte	.LASF36
+ 562 0161 01       		.byte	0x1
+ 563 0162 1501     		.2byte	0x115
+ 564 0164 6B000000 		.4byte	0x6b
+ 565 0168 00000000 		.4byte	.LFB9
+ 566 016c 10000000 		.4byte	.LFE9-.LFB9
+ 567 0170 01       		.uleb128 0x1
+ 568 0171 9C       		.byte	0x9c
+ 569 0172 94010000 		.4byte	0x194
+ 570 0176 12       		.uleb128 0x12
+ 571 0177 A8010000 		.4byte	.LASF20
+ 572 017b 01       		.byte	0x1
+ 573 017c 1701     		.2byte	0x117
+ 574 017e 76000000 		.4byte	0x76
+ 575 0182 34000000 		.4byte	.LLST2
+ 576 0186 13       		.uleb128 0x13
+ 577 0187 7F030000 		.4byte	.LASF22
+ 578 018b 01       		.byte	0x1
+ 579 018c 1801     		.2byte	0x118
+ 580 018e 76000000 		.4byte	0x76
+ 581 0192 0E       		.byte	0xe
+ 582 0193 00       		.byte	0
+ 583 0194 14       		.uleb128 0x14
+ 584 0195 DE000000 		.4byte	.LASF24
+ 585 0199 01       		.byte	0x1
+ 586 019a 3001     		.2byte	0x130
+ 587 019c 00000000 		.4byte	.LFB10
+ 588 01a0 10000000 		.4byte	.LFE10-.LFB10
+ 589 01a4 01       		.uleb128 0x1
+ 590 01a5 9C       		.byte	0x9c
+ 591 01a6 15       		.uleb128 0x15
+ 592 01a7 54000000 		.4byte	.LASF26
+ 593 01ab 01       		.byte	0x1
+ 594 01ac 4501     		.2byte	0x145
+ 595 01ae 6B000000 		.4byte	0x6b
+ 596 01b2 00000000 		.4byte	.LFB11
+ 597 01b6 14000000 		.4byte	.LFE11-.LFB11
+ 598 01ba 01       		.uleb128 0x1
+ 599 01bb 9C       		.byte	0x9c
+ 600 01bc 14       		.uleb128 0x14
+ 601 01bd 7B020000 		.4byte	.LASF27
+ 602 01c1 01       		.byte	0x1
+ 603 01c2 5A01     		.2byte	0x15a
+ 604 01c4 00000000 		.4byte	.LFB12
+ 605 01c8 10000000 		.4byte	.LFE12-.LFB12
+ 606 01cc 01       		.uleb128 0x1
+ 607 01cd 9C       		.byte	0x9c
+ 608 01ce 0A       		.uleb128 0xa
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 19
+
+
+ 609 01cf 44020000 		.4byte	.LASF28
+ 610 01d3 01       		.byte	0x1
+ 611 01d4 38       		.byte	0x38
+ 612 01d5 00000000 		.4byte	.LFB2
+ 613 01d9 1C000000 		.4byte	.LFE2-.LFB2
+ 614 01dd 01       		.uleb128 0x1
+ 615 01de 9C       		.byte	0x9c
+ 616 01df 20020000 		.4byte	0x220
+ 617 01e3 10       		.uleb128 0x10
+ 618 01e4 06000000 		.4byte	.LVL8
+ 619 01e8 BC010000 		.4byte	0x1bc
+ 620 01ec 16       		.uleb128 0x16
+ 621 01ed 0C000000 		.4byte	.LVL9
+ 622 01f1 D2000000 		.4byte	0xd2
+ 623 01f5 03020000 		.4byte	0x203
+ 624 01f9 17       		.uleb128 0x17
+ 625 01fa 01       		.uleb128 0x1
+ 626 01fb 50       		.byte	0x50
+ 627 01fc 05       		.uleb128 0x5
+ 628 01fd 03       		.byte	0x3
+ 629 01fe 00000000 		.4byte	front_derail_enc_isr_Interrupt
+ 630 0202 00       		.byte	0
+ 631 0203 16       		.uleb128 0x16
+ 632 0204 12000000 		.4byte	.LVL10
+ 633 0208 0A010000 		.4byte	0x10a
+ 634 020c 16020000 		.4byte	0x216
+ 635 0210 17       		.uleb128 0x17
+ 636 0211 01       		.uleb128 0x1
+ 637 0212 50       		.byte	0x50
+ 638 0213 01       		.uleb128 0x1
+ 639 0214 33       		.byte	0x33
+ 640 0215 00       		.byte	0
+ 641 0216 10       		.uleb128 0x10
+ 642 0217 16000000 		.4byte	.LVL11
+ 643 021b 94010000 		.4byte	0x194
+ 644 021f 00       		.byte	0
+ 645 0220 0A       		.uleb128 0xa
+ 646 0221 ED010000 		.4byte	.LASF29
+ 647 0225 01       		.byte	0x1
+ 648 0226 63       		.byte	0x63
+ 649 0227 00000000 		.4byte	.LFB3
+ 650 022b 1A000000 		.4byte	.LFE3-.LFB3
+ 651 022f 01       		.uleb128 0x1
+ 652 0230 9C       		.byte	0x9c
+ 653 0231 7E020000 		.4byte	0x27e
+ 654 0235 0D       		.uleb128 0xd
+ 655 0236 19000000 		.4byte	.LASF19
+ 656 023a 01       		.byte	0x1
+ 657 023b 63       		.byte	0x63
+ 658 023c A7000000 		.4byte	0xa7
+ 659 0240 56000000 		.4byte	.LLST3
+ 660 0244 10       		.uleb128 0x10
+ 661 0245 08000000 		.4byte	.LVL13
+ 662 0249 BC010000 		.4byte	0x1bc
+ 663 024d 16       		.uleb128 0x16
+ 664 024e 0E000000 		.4byte	.LVL14
+ 665 0252 D2000000 		.4byte	0xd2
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 20
+
+
+ 666 0256 61020000 		.4byte	0x261
+ 667 025a 17       		.uleb128 0x17
+ 668 025b 01       		.uleb128 0x1
+ 669 025c 50       		.byte	0x50
+ 670 025d 02       		.uleb128 0x2
+ 671 025e 74       		.byte	0x74
+ 672 025f 00       		.sleb128 0
+ 673 0260 00       		.byte	0
+ 674 0261 16       		.uleb128 0x16
+ 675 0262 14000000 		.4byte	.LVL15
+ 676 0266 0A010000 		.4byte	0x10a
+ 677 026a 74020000 		.4byte	0x274
+ 678 026e 17       		.uleb128 0x17
+ 679 026f 01       		.uleb128 0x1
+ 680 0270 50       		.byte	0x50
+ 681 0271 01       		.uleb128 0x1
+ 682 0272 33       		.byte	0x33
+ 683 0273 00       		.byte	0
+ 684 0274 10       		.uleb128 0x10
+ 685 0275 18000000 		.4byte	.LVL16
+ 686 0279 94010000 		.4byte	0x194
+ 687 027d 00       		.byte	0
+ 688 027e 0A       		.uleb128 0xa
+ 689 027f C4000000 		.4byte	.LASF30
+ 690 0283 01       		.byte	0x1
+ 691 0284 81       		.byte	0x81
+ 692 0285 00000000 		.4byte	.LFB4
+ 693 0289 14000000 		.4byte	.LFE4-.LFB4
+ 694 028d 01       		.uleb128 0x1
+ 695 028e 9C       		.byte	0x9c
+ 696 028f A6020000 		.4byte	0x2a6
+ 697 0293 10       		.uleb128 0x10
+ 698 0294 06000000 		.4byte	.LVL18
+ 699 0298 BC010000 		.4byte	0x1bc
+ 700 029c 10       		.uleb128 0x10
+ 701 029d 0C000000 		.4byte	.LVL19
+ 702 02a1 D2000000 		.4byte	0xd2
+ 703 02a5 00       		.byte	0
+ 704 02a6 14       		.uleb128 0x14
+ 705 02a7 34000000 		.4byte	.LASF31
+ 706 02ab 01       		.byte	0x1
+ 707 02ac 7501     		.2byte	0x175
+ 708 02ae 00000000 		.4byte	.LFB13
+ 709 02b2 10000000 		.4byte	.LFE13-.LFB13
+ 710 02b6 01       		.uleb128 0x1
+ 711 02b7 9C       		.byte	0x9c
+ 712 02b8 14       		.uleb128 0x14
+ 713 02b9 32010000 		.4byte	.LASF32
+ 714 02bd 01       		.byte	0x1
+ 715 02be 8E01     		.2byte	0x18e
+ 716 02c0 00000000 		.4byte	.LFB14
+ 717 02c4 10000000 		.4byte	.LFE14-.LFB14
+ 718 02c8 01       		.uleb128 0x1
+ 719 02c9 9C       		.byte	0x9c
+ 720 02ca 18       		.uleb128 0x18
+ 721 02cb A7000000 		.4byte	0xa7
+ 722 02cf DA020000 		.4byte	0x2da
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 21
+
+
+ 723 02d3 19       		.uleb128 0x19
+ 724 02d4 BA000000 		.4byte	0xba
+ 725 02d8 2F       		.byte	0x2f
+ 726 02d9 00       		.byte	0
+ 727 02da 1A       		.uleb128 0x1a
+ 728 02db 06000000 		.4byte	.LASF37
+ 729 02df 01       		.byte	0x1
+ 730 02e0 21       		.byte	0x21
+ 731 02e1 CA020000 		.4byte	0x2ca
+ 732 02e5 1B       		.uleb128 0x1b
+ 733 02e6 20020000 		.4byte	.LASF38
+ 734 02ea 03       		.byte	0x3
+ 735 02eb 5E       		.byte	0x5e
+ 736 02ec 6B000000 		.4byte	0x6b
+ 737 02f0 1C       		.uleb128 0x1c
+ 738 02f1 0A020000 		.4byte	.LASF39
+ 739 02f5 03       		.byte	0x3
+ 740 02f6 5F       		.byte	0x5f
+ 741 02f7 1D       		.uleb128 0x1d
+ 742 02f8 6B000000 		.4byte	0x6b
+ 743 02fc 00       		.byte	0
+ 744 02fd 00       		.byte	0
+ 745              		.section	.debug_abbrev,"",%progbits
+ 746              	.Ldebug_abbrev0:
+ 747 0000 01       		.uleb128 0x1
+ 748 0001 11       		.uleb128 0x11
+ 749 0002 01       		.byte	0x1
+ 750 0003 25       		.uleb128 0x25
+ 751 0004 0E       		.uleb128 0xe
+ 752 0005 13       		.uleb128 0x13
+ 753 0006 0B       		.uleb128 0xb
+ 754 0007 03       		.uleb128 0x3
+ 755 0008 0E       		.uleb128 0xe
+ 756 0009 1B       		.uleb128 0x1b
+ 757 000a 0E       		.uleb128 0xe
+ 758 000b 55       		.uleb128 0x55
+ 759 000c 17       		.uleb128 0x17
+ 760 000d 11       		.uleb128 0x11
+ 761 000e 01       		.uleb128 0x1
+ 762 000f 10       		.uleb128 0x10
+ 763 0010 17       		.uleb128 0x17
+ 764 0011 00       		.byte	0
+ 765 0012 00       		.byte	0
+ 766 0013 02       		.uleb128 0x2
+ 767 0014 24       		.uleb128 0x24
+ 768 0015 00       		.byte	0
+ 769 0016 0B       		.uleb128 0xb
+ 770 0017 0B       		.uleb128 0xb
+ 771 0018 3E       		.uleb128 0x3e
+ 772 0019 0B       		.uleb128 0xb
+ 773 001a 03       		.uleb128 0x3
+ 774 001b 0E       		.uleb128 0xe
+ 775 001c 00       		.byte	0
+ 776 001d 00       		.byte	0
+ 777 001e 03       		.uleb128 0x3
+ 778 001f 24       		.uleb128 0x24
+ 779 0020 00       		.byte	0
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 22
+
+
+ 780 0021 0B       		.uleb128 0xb
+ 781 0022 0B       		.uleb128 0xb
+ 782 0023 3E       		.uleb128 0x3e
+ 783 0024 0B       		.uleb128 0xb
+ 784 0025 03       		.uleb128 0x3
+ 785 0026 08       		.uleb128 0x8
+ 786 0027 00       		.byte	0
+ 787 0028 00       		.byte	0
+ 788 0029 04       		.uleb128 0x4
+ 789 002a 16       		.uleb128 0x16
+ 790 002b 00       		.byte	0
+ 791 002c 03       		.uleb128 0x3
+ 792 002d 0E       		.uleb128 0xe
+ 793 002e 3A       		.uleb128 0x3a
+ 794 002f 0B       		.uleb128 0xb
+ 795 0030 3B       		.uleb128 0x3b
+ 796 0031 0B       		.uleb128 0xb
+ 797 0032 49       		.uleb128 0x49
+ 798 0033 13       		.uleb128 0x13
+ 799 0034 00       		.byte	0
+ 800 0035 00       		.byte	0
+ 801 0036 05       		.uleb128 0x5
+ 802 0037 16       		.uleb128 0x16
+ 803 0038 00       		.byte	0
+ 804 0039 03       		.uleb128 0x3
+ 805 003a 0E       		.uleb128 0xe
+ 806 003b 3A       		.uleb128 0x3a
+ 807 003c 0B       		.uleb128 0xb
+ 808 003d 3B       		.uleb128 0x3b
+ 809 003e 05       		.uleb128 0x5
+ 810 003f 49       		.uleb128 0x49
+ 811 0040 13       		.uleb128 0x13
+ 812 0041 00       		.byte	0
+ 813 0042 00       		.byte	0
+ 814 0043 06       		.uleb128 0x6
+ 815 0044 35       		.uleb128 0x35
+ 816 0045 00       		.byte	0
+ 817 0046 49       		.uleb128 0x49
+ 818 0047 13       		.uleb128 0x13
+ 819 0048 00       		.byte	0
+ 820 0049 00       		.byte	0
+ 821 004a 07       		.uleb128 0x7
+ 822 004b 0F       		.uleb128 0xf
+ 823 004c 00       		.byte	0
+ 824 004d 0B       		.uleb128 0xb
+ 825 004e 0B       		.uleb128 0xb
+ 826 004f 49       		.uleb128 0x49
+ 827 0050 13       		.uleb128 0x13
+ 828 0051 00       		.byte	0
+ 829 0052 00       		.byte	0
+ 830 0053 08       		.uleb128 0x8
+ 831 0054 15       		.uleb128 0x15
+ 832 0055 00       		.byte	0
+ 833 0056 27       		.uleb128 0x27
+ 834 0057 19       		.uleb128 0x19
+ 835 0058 00       		.byte	0
+ 836 0059 00       		.byte	0
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 23
+
+
+ 837 005a 09       		.uleb128 0x9
+ 838 005b 2E       		.uleb128 0x2e
+ 839 005c 00       		.byte	0
+ 840 005d 3F       		.uleb128 0x3f
+ 841 005e 19       		.uleb128 0x19
+ 842 005f 03       		.uleb128 0x3
+ 843 0060 0E       		.uleb128 0xe
+ 844 0061 3A       		.uleb128 0x3a
+ 845 0062 0B       		.uleb128 0xb
+ 846 0063 3B       		.uleb128 0x3b
+ 847 0064 0B       		.uleb128 0xb
+ 848 0065 27       		.uleb128 0x27
+ 849 0066 19       		.uleb128 0x19
+ 850 0067 11       		.uleb128 0x11
+ 851 0068 01       		.uleb128 0x1
+ 852 0069 12       		.uleb128 0x12
+ 853 006a 06       		.uleb128 0x6
+ 854 006b 40       		.uleb128 0x40
+ 855 006c 18       		.uleb128 0x18
+ 856 006d 9742     		.uleb128 0x2117
+ 857 006f 19       		.uleb128 0x19
+ 858 0070 00       		.byte	0
+ 859 0071 00       		.byte	0
+ 860 0072 0A       		.uleb128 0xa
+ 861 0073 2E       		.uleb128 0x2e
+ 862 0074 01       		.byte	0x1
+ 863 0075 3F       		.uleb128 0x3f
+ 864 0076 19       		.uleb128 0x19
+ 865 0077 03       		.uleb128 0x3
+ 866 0078 0E       		.uleb128 0xe
+ 867 0079 3A       		.uleb128 0x3a
+ 868 007a 0B       		.uleb128 0xb
+ 869 007b 3B       		.uleb128 0x3b
+ 870 007c 0B       		.uleb128 0xb
+ 871 007d 27       		.uleb128 0x27
+ 872 007e 19       		.uleb128 0x19
+ 873 007f 11       		.uleb128 0x11
+ 874 0080 01       		.uleb128 0x1
+ 875 0081 12       		.uleb128 0x12
+ 876 0082 06       		.uleb128 0x6
+ 877 0083 40       		.uleb128 0x40
+ 878 0084 18       		.uleb128 0x18
+ 879 0085 9742     		.uleb128 0x2117
+ 880 0087 19       		.uleb128 0x19
+ 881 0088 01       		.uleb128 0x1
+ 882 0089 13       		.uleb128 0x13
+ 883 008a 00       		.byte	0
+ 884 008b 00       		.byte	0
+ 885 008c 0B       		.uleb128 0xb
+ 886 008d 05       		.uleb128 0x5
+ 887 008e 00       		.byte	0
+ 888 008f 03       		.uleb128 0x3
+ 889 0090 0E       		.uleb128 0xe
+ 890 0091 3A       		.uleb128 0x3a
+ 891 0092 0B       		.uleb128 0xb
+ 892 0093 3B       		.uleb128 0x3b
+ 893 0094 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 24
+
+
+ 894 0095 49       		.uleb128 0x49
+ 895 0096 13       		.uleb128 0x13
+ 896 0097 02       		.uleb128 0x2
+ 897 0098 18       		.uleb128 0x18
+ 898 0099 00       		.byte	0
+ 899 009a 00       		.byte	0
+ 900 009b 0C       		.uleb128 0xc
+ 901 009c 2E       		.uleb128 0x2e
+ 902 009d 00       		.byte	0
+ 903 009e 3F       		.uleb128 0x3f
+ 904 009f 19       		.uleb128 0x19
+ 905 00a0 03       		.uleb128 0x3
+ 906 00a1 0E       		.uleb128 0xe
+ 907 00a2 3A       		.uleb128 0x3a
+ 908 00a3 0B       		.uleb128 0xb
+ 909 00a4 3B       		.uleb128 0x3b
+ 910 00a5 0B       		.uleb128 0xb
+ 911 00a6 27       		.uleb128 0x27
+ 912 00a7 19       		.uleb128 0x19
+ 913 00a8 49       		.uleb128 0x49
+ 914 00a9 13       		.uleb128 0x13
+ 915 00aa 11       		.uleb128 0x11
+ 916 00ab 01       		.uleb128 0x1
+ 917 00ac 12       		.uleb128 0x12
+ 918 00ad 06       		.uleb128 0x6
+ 919 00ae 40       		.uleb128 0x40
+ 920 00af 18       		.uleb128 0x18
+ 921 00b0 9742     		.uleb128 0x2117
+ 922 00b2 19       		.uleb128 0x19
+ 923 00b3 00       		.byte	0
+ 924 00b4 00       		.byte	0
+ 925 00b5 0D       		.uleb128 0xd
+ 926 00b6 05       		.uleb128 0x5
+ 927 00b7 00       		.byte	0
+ 928 00b8 03       		.uleb128 0x3
+ 929 00b9 0E       		.uleb128 0xe
+ 930 00ba 3A       		.uleb128 0x3a
+ 931 00bb 0B       		.uleb128 0xb
+ 932 00bc 3B       		.uleb128 0x3b
+ 933 00bd 0B       		.uleb128 0xb
+ 934 00be 49       		.uleb128 0x49
+ 935 00bf 13       		.uleb128 0x13
+ 936 00c0 02       		.uleb128 0x2
+ 937 00c1 17       		.uleb128 0x17
+ 938 00c2 00       		.byte	0
+ 939 00c3 00       		.byte	0
+ 940 00c4 0E       		.uleb128 0xe
+ 941 00c5 34       		.uleb128 0x34
+ 942 00c6 00       		.byte	0
+ 943 00c7 03       		.uleb128 0x3
+ 944 00c8 0E       		.uleb128 0xe
+ 945 00c9 3A       		.uleb128 0x3a
+ 946 00ca 0B       		.uleb128 0xb
+ 947 00cb 3B       		.uleb128 0x3b
+ 948 00cc 0B       		.uleb128 0xb
+ 949 00cd 49       		.uleb128 0x49
+ 950 00ce 13       		.uleb128 0x13
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 25
+
+
+ 951 00cf 02       		.uleb128 0x2
+ 952 00d0 17       		.uleb128 0x17
+ 953 00d1 00       		.byte	0
+ 954 00d2 00       		.byte	0
+ 955 00d3 0F       		.uleb128 0xf
+ 956 00d4 34       		.uleb128 0x34
+ 957 00d5 00       		.byte	0
+ 958 00d6 03       		.uleb128 0x3
+ 959 00d7 0E       		.uleb128 0xe
+ 960 00d8 3A       		.uleb128 0x3a
+ 961 00d9 0B       		.uleb128 0xb
+ 962 00da 3B       		.uleb128 0x3b
+ 963 00db 0B       		.uleb128 0xb
+ 964 00dc 49       		.uleb128 0x49
+ 965 00dd 13       		.uleb128 0x13
+ 966 00de 1C       		.uleb128 0x1c
+ 967 00df 0B       		.uleb128 0xb
+ 968 00e0 00       		.byte	0
+ 969 00e1 00       		.byte	0
+ 970 00e2 10       		.uleb128 0x10
+ 971 00e3 898201   		.uleb128 0x4109
+ 972 00e6 00       		.byte	0
+ 973 00e7 11       		.uleb128 0x11
+ 974 00e8 01       		.uleb128 0x1
+ 975 00e9 31       		.uleb128 0x31
+ 976 00ea 13       		.uleb128 0x13
+ 977 00eb 00       		.byte	0
+ 978 00ec 00       		.byte	0
+ 979 00ed 11       		.uleb128 0x11
+ 980 00ee 2E       		.uleb128 0x2e
+ 981 00ef 01       		.byte	0x1
+ 982 00f0 3F       		.uleb128 0x3f
+ 983 00f1 19       		.uleb128 0x19
+ 984 00f2 03       		.uleb128 0x3
+ 985 00f3 0E       		.uleb128 0xe
+ 986 00f4 3A       		.uleb128 0x3a
+ 987 00f5 0B       		.uleb128 0xb
+ 988 00f6 3B       		.uleb128 0x3b
+ 989 00f7 05       		.uleb128 0x5
+ 990 00f8 27       		.uleb128 0x27
+ 991 00f9 19       		.uleb128 0x19
+ 992 00fa 49       		.uleb128 0x49
+ 993 00fb 13       		.uleb128 0x13
+ 994 00fc 11       		.uleb128 0x11
+ 995 00fd 01       		.uleb128 0x1
+ 996 00fe 12       		.uleb128 0x12
+ 997 00ff 06       		.uleb128 0x6
+ 998 0100 40       		.uleb128 0x40
+ 999 0101 18       		.uleb128 0x18
+ 1000 0102 9742     		.uleb128 0x2117
+ 1001 0104 19       		.uleb128 0x19
+ 1002 0105 01       		.uleb128 0x1
+ 1003 0106 13       		.uleb128 0x13
+ 1004 0107 00       		.byte	0
+ 1005 0108 00       		.byte	0
+ 1006 0109 12       		.uleb128 0x12
+ 1007 010a 34       		.uleb128 0x34
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 26
+
+
+ 1008 010b 00       		.byte	0
+ 1009 010c 03       		.uleb128 0x3
+ 1010 010d 0E       		.uleb128 0xe
+ 1011 010e 3A       		.uleb128 0x3a
+ 1012 010f 0B       		.uleb128 0xb
+ 1013 0110 3B       		.uleb128 0x3b
+ 1014 0111 05       		.uleb128 0x5
+ 1015 0112 49       		.uleb128 0x49
+ 1016 0113 13       		.uleb128 0x13
+ 1017 0114 02       		.uleb128 0x2
+ 1018 0115 17       		.uleb128 0x17
+ 1019 0116 00       		.byte	0
+ 1020 0117 00       		.byte	0
+ 1021 0118 13       		.uleb128 0x13
+ 1022 0119 34       		.uleb128 0x34
+ 1023 011a 00       		.byte	0
+ 1024 011b 03       		.uleb128 0x3
+ 1025 011c 0E       		.uleb128 0xe
+ 1026 011d 3A       		.uleb128 0x3a
+ 1027 011e 0B       		.uleb128 0xb
+ 1028 011f 3B       		.uleb128 0x3b
+ 1029 0120 05       		.uleb128 0x5
+ 1030 0121 49       		.uleb128 0x49
+ 1031 0122 13       		.uleb128 0x13
+ 1032 0123 1C       		.uleb128 0x1c
+ 1033 0124 0B       		.uleb128 0xb
+ 1034 0125 00       		.byte	0
+ 1035 0126 00       		.byte	0
+ 1036 0127 14       		.uleb128 0x14
+ 1037 0128 2E       		.uleb128 0x2e
+ 1038 0129 00       		.byte	0
+ 1039 012a 3F       		.uleb128 0x3f
+ 1040 012b 19       		.uleb128 0x19
+ 1041 012c 03       		.uleb128 0x3
+ 1042 012d 0E       		.uleb128 0xe
+ 1043 012e 3A       		.uleb128 0x3a
+ 1044 012f 0B       		.uleb128 0xb
+ 1045 0130 3B       		.uleb128 0x3b
+ 1046 0131 05       		.uleb128 0x5
+ 1047 0132 27       		.uleb128 0x27
+ 1048 0133 19       		.uleb128 0x19
+ 1049 0134 11       		.uleb128 0x11
+ 1050 0135 01       		.uleb128 0x1
+ 1051 0136 12       		.uleb128 0x12
+ 1052 0137 06       		.uleb128 0x6
+ 1053 0138 40       		.uleb128 0x40
+ 1054 0139 18       		.uleb128 0x18
+ 1055 013a 9742     		.uleb128 0x2117
+ 1056 013c 19       		.uleb128 0x19
+ 1057 013d 00       		.byte	0
+ 1058 013e 00       		.byte	0
+ 1059 013f 15       		.uleb128 0x15
+ 1060 0140 2E       		.uleb128 0x2e
+ 1061 0141 00       		.byte	0
+ 1062 0142 3F       		.uleb128 0x3f
+ 1063 0143 19       		.uleb128 0x19
+ 1064 0144 03       		.uleb128 0x3
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 27
+
+
+ 1065 0145 0E       		.uleb128 0xe
+ 1066 0146 3A       		.uleb128 0x3a
+ 1067 0147 0B       		.uleb128 0xb
+ 1068 0148 3B       		.uleb128 0x3b
+ 1069 0149 05       		.uleb128 0x5
+ 1070 014a 27       		.uleb128 0x27
+ 1071 014b 19       		.uleb128 0x19
+ 1072 014c 49       		.uleb128 0x49
+ 1073 014d 13       		.uleb128 0x13
+ 1074 014e 11       		.uleb128 0x11
+ 1075 014f 01       		.uleb128 0x1
+ 1076 0150 12       		.uleb128 0x12
+ 1077 0151 06       		.uleb128 0x6
+ 1078 0152 40       		.uleb128 0x40
+ 1079 0153 18       		.uleb128 0x18
+ 1080 0154 9742     		.uleb128 0x2117
+ 1081 0156 19       		.uleb128 0x19
+ 1082 0157 00       		.byte	0
+ 1083 0158 00       		.byte	0
+ 1084 0159 16       		.uleb128 0x16
+ 1085 015a 898201   		.uleb128 0x4109
+ 1086 015d 01       		.byte	0x1
+ 1087 015e 11       		.uleb128 0x11
+ 1088 015f 01       		.uleb128 0x1
+ 1089 0160 31       		.uleb128 0x31
+ 1090 0161 13       		.uleb128 0x13
+ 1091 0162 01       		.uleb128 0x1
+ 1092 0163 13       		.uleb128 0x13
+ 1093 0164 00       		.byte	0
+ 1094 0165 00       		.byte	0
+ 1095 0166 17       		.uleb128 0x17
+ 1096 0167 8A8201   		.uleb128 0x410a
+ 1097 016a 00       		.byte	0
+ 1098 016b 02       		.uleb128 0x2
+ 1099 016c 18       		.uleb128 0x18
+ 1100 016d 9142     		.uleb128 0x2111
+ 1101 016f 18       		.uleb128 0x18
+ 1102 0170 00       		.byte	0
+ 1103 0171 00       		.byte	0
+ 1104 0172 18       		.uleb128 0x18
+ 1105 0173 01       		.uleb128 0x1
+ 1106 0174 01       		.byte	0x1
+ 1107 0175 49       		.uleb128 0x49
+ 1108 0176 13       		.uleb128 0x13
+ 1109 0177 01       		.uleb128 0x1
+ 1110 0178 13       		.uleb128 0x13
+ 1111 0179 00       		.byte	0
+ 1112 017a 00       		.byte	0
+ 1113 017b 19       		.uleb128 0x19
+ 1114 017c 21       		.uleb128 0x21
+ 1115 017d 00       		.byte	0
+ 1116 017e 49       		.uleb128 0x49
+ 1117 017f 13       		.uleb128 0x13
+ 1118 0180 2F       		.uleb128 0x2f
+ 1119 0181 0B       		.uleb128 0xb
+ 1120 0182 00       		.byte	0
+ 1121 0183 00       		.byte	0
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 28
+
+
+ 1122 0184 1A       		.uleb128 0x1a
+ 1123 0185 34       		.uleb128 0x34
+ 1124 0186 00       		.byte	0
+ 1125 0187 03       		.uleb128 0x3
+ 1126 0188 0E       		.uleb128 0xe
+ 1127 0189 3A       		.uleb128 0x3a
+ 1128 018a 0B       		.uleb128 0xb
+ 1129 018b 3B       		.uleb128 0x3b
+ 1130 018c 0B       		.uleb128 0xb
+ 1131 018d 49       		.uleb128 0x49
+ 1132 018e 13       		.uleb128 0x13
+ 1133 018f 3F       		.uleb128 0x3f
+ 1134 0190 19       		.uleb128 0x19
+ 1135 0191 3C       		.uleb128 0x3c
+ 1136 0192 19       		.uleb128 0x19
+ 1137 0193 00       		.byte	0
+ 1138 0194 00       		.byte	0
+ 1139 0195 1B       		.uleb128 0x1b
+ 1140 0196 2E       		.uleb128 0x2e
+ 1141 0197 00       		.byte	0
+ 1142 0198 3F       		.uleb128 0x3f
+ 1143 0199 19       		.uleb128 0x19
+ 1144 019a 03       		.uleb128 0x3
+ 1145 019b 0E       		.uleb128 0xe
+ 1146 019c 3A       		.uleb128 0x3a
+ 1147 019d 0B       		.uleb128 0xb
+ 1148 019e 3B       		.uleb128 0x3b
+ 1149 019f 0B       		.uleb128 0xb
+ 1150 01a0 27       		.uleb128 0x27
+ 1151 01a1 19       		.uleb128 0x19
+ 1152 01a2 49       		.uleb128 0x49
+ 1153 01a3 13       		.uleb128 0x13
+ 1154 01a4 3C       		.uleb128 0x3c
+ 1155 01a5 19       		.uleb128 0x19
+ 1156 01a6 00       		.byte	0
+ 1157 01a7 00       		.byte	0
+ 1158 01a8 1C       		.uleb128 0x1c
+ 1159 01a9 2E       		.uleb128 0x2e
+ 1160 01aa 01       		.byte	0x1
+ 1161 01ab 3F       		.uleb128 0x3f
+ 1162 01ac 19       		.uleb128 0x19
+ 1163 01ad 03       		.uleb128 0x3
+ 1164 01ae 0E       		.uleb128 0xe
+ 1165 01af 3A       		.uleb128 0x3a
+ 1166 01b0 0B       		.uleb128 0xb
+ 1167 01b1 3B       		.uleb128 0x3b
+ 1168 01b2 0B       		.uleb128 0xb
+ 1169 01b3 27       		.uleb128 0x27
+ 1170 01b4 19       		.uleb128 0x19
+ 1171 01b5 3C       		.uleb128 0x3c
+ 1172 01b6 19       		.uleb128 0x19
+ 1173 01b7 00       		.byte	0
+ 1174 01b8 00       		.byte	0
+ 1175 01b9 1D       		.uleb128 0x1d
+ 1176 01ba 05       		.uleb128 0x5
+ 1177 01bb 00       		.byte	0
+ 1178 01bc 49       		.uleb128 0x49
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 29
+
+
+ 1179 01bd 13       		.uleb128 0x13
+ 1180 01be 00       		.byte	0
+ 1181 01bf 00       		.byte	0
+ 1182 01c0 00       		.byte	0
+ 1183              		.section	.debug_loc,"",%progbits
+ 1184              	.Ldebug_loc0:
+ 1185              	.LLST0:
+ 1186 0000 00000000 		.4byte	.LVL1
+ 1187 0004 07000000 		.4byte	.LVL3-1
+ 1188 0008 0100     		.2byte	0x1
+ 1189 000a 50       		.byte	0x50
+ 1190 000b 07000000 		.4byte	.LVL3-1
+ 1191 000f 24000000 		.4byte	.LFE8
+ 1192 0013 0400     		.2byte	0x4
+ 1193 0015 F3       		.byte	0xf3
+ 1194 0016 01       		.uleb128 0x1
+ 1195 0017 50       		.byte	0x50
+ 1196 0018 9F       		.byte	0x9f
+ 1197 0019 00000000 		.4byte	0
+ 1198 001d 00000000 		.4byte	0
+ 1199              	.LLST1:
+ 1200 0021 08000000 		.4byte	.LVL3
+ 1201 0025 19000000 		.4byte	.LVL4-1
+ 1202 0029 0100     		.2byte	0x1
+ 1203 002b 50       		.byte	0x50
+ 1204 002c 00000000 		.4byte	0
+ 1205 0030 00000000 		.4byte	0
+ 1206              	.LLST2:
+ 1207 0034 06000000 		.4byte	.LVL6
+ 1208 0038 08000000 		.4byte	.LVL7
+ 1209 003c 0500     		.2byte	0x5
+ 1210 003e 70       		.byte	0x70
+ 1211 003f 00       		.sleb128 0
+ 1212 0040 4E       		.byte	0x4e
+ 1213 0041 25       		.byte	0x25
+ 1214 0042 9F       		.byte	0x9f
+ 1215 0043 08000000 		.4byte	.LVL7
+ 1216 0047 10000000 		.4byte	.LFE9
+ 1217 004b 0100     		.2byte	0x1
+ 1218 004d 50       		.byte	0x50
+ 1219 004e 00000000 		.4byte	0
+ 1220 0052 00000000 		.4byte	0
+ 1221              	.LLST3:
+ 1222 0056 00000000 		.4byte	.LVL12
+ 1223 005a 07000000 		.4byte	.LVL13-1
+ 1224 005e 0100     		.2byte	0x1
+ 1225 0060 50       		.byte	0x50
+ 1226 0061 07000000 		.4byte	.LVL13-1
+ 1227 0065 18000000 		.4byte	.LVL17
+ 1228 0069 0100     		.2byte	0x1
+ 1229 006b 54       		.byte	0x54
+ 1230 006c 18000000 		.4byte	.LVL17
+ 1231 0070 1A000000 		.4byte	.LFE3
+ 1232 0074 0400     		.2byte	0x4
+ 1233 0076 F3       		.byte	0xf3
+ 1234 0077 01       		.uleb128 0x1
+ 1235 0078 50       		.byte	0x50
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 30
+
+
+ 1236 0079 9F       		.byte	0x9f
+ 1237 007a 00000000 		.4byte	0
+ 1238 007e 00000000 		.4byte	0
+ 1239              		.section	.debug_aranges,"",%progbits
+ 1240 0000 7C000000 		.4byte	0x7c
+ 1241 0004 0200     		.2byte	0x2
+ 1242 0006 00000000 		.4byte	.Ldebug_info0
+ 1243 000a 04       		.byte	0x4
+ 1244 000b 00       		.byte	0
+ 1245 000c 0000     		.2byte	0
+ 1246 000e 0000     		.2byte	0
+ 1247 0010 00000000 		.4byte	.LFB5
+ 1248 0014 02000000 		.4byte	.LFE5-.LFB5
+ 1249 0018 00000000 		.4byte	.LFB6
+ 1250 001c 0C000000 		.4byte	.LFE6-.LFB6
+ 1251 0020 00000000 		.4byte	.LFB7
+ 1252 0024 0C000000 		.4byte	.LFE7-.LFB7
+ 1253 0028 00000000 		.4byte	.LFB8
+ 1254 002c 24000000 		.4byte	.LFE8-.LFB8
+ 1255 0030 00000000 		.4byte	.LFB9
+ 1256 0034 10000000 		.4byte	.LFE9-.LFB9
+ 1257 0038 00000000 		.4byte	.LFB10
+ 1258 003c 10000000 		.4byte	.LFE10-.LFB10
+ 1259 0040 00000000 		.4byte	.LFB11
+ 1260 0044 14000000 		.4byte	.LFE11-.LFB11
+ 1261 0048 00000000 		.4byte	.LFB12
+ 1262 004c 10000000 		.4byte	.LFE12-.LFB12
+ 1263 0050 00000000 		.4byte	.LFB2
+ 1264 0054 1C000000 		.4byte	.LFE2-.LFB2
+ 1265 0058 00000000 		.4byte	.LFB3
+ 1266 005c 1A000000 		.4byte	.LFE3-.LFB3
+ 1267 0060 00000000 		.4byte	.LFB4
+ 1268 0064 14000000 		.4byte	.LFE4-.LFB4
+ 1269 0068 00000000 		.4byte	.LFB13
+ 1270 006c 10000000 		.4byte	.LFE13-.LFB13
+ 1271 0070 00000000 		.4byte	.LFB14
+ 1272 0074 10000000 		.4byte	.LFE14-.LFB14
+ 1273 0078 00000000 		.4byte	0
+ 1274 007c 00000000 		.4byte	0
+ 1275              		.section	.debug_ranges,"",%progbits
+ 1276              	.Ldebug_ranges0:
+ 1277 0000 00000000 		.4byte	.LFB5
+ 1278 0004 02000000 		.4byte	.LFE5
+ 1279 0008 00000000 		.4byte	.LFB6
+ 1280 000c 0C000000 		.4byte	.LFE6
+ 1281 0010 00000000 		.4byte	.LFB7
+ 1282 0014 0C000000 		.4byte	.LFE7
+ 1283 0018 00000000 		.4byte	.LFB8
+ 1284 001c 24000000 		.4byte	.LFE8
+ 1285 0020 00000000 		.4byte	.LFB9
+ 1286 0024 10000000 		.4byte	.LFE9
+ 1287 0028 00000000 		.4byte	.LFB10
+ 1288 002c 10000000 		.4byte	.LFE10
+ 1289 0030 00000000 		.4byte	.LFB11
+ 1290 0034 14000000 		.4byte	.LFE11
+ 1291 0038 00000000 		.4byte	.LFB12
+ 1292 003c 10000000 		.4byte	.LFE12
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 31
+
+
+ 1293 0040 00000000 		.4byte	.LFB2
+ 1294 0044 1C000000 		.4byte	.LFE2
+ 1295 0048 00000000 		.4byte	.LFB3
+ 1296 004c 1A000000 		.4byte	.LFE3
+ 1297 0050 00000000 		.4byte	.LFB4
+ 1298 0054 14000000 		.4byte	.LFE4
+ 1299 0058 00000000 		.4byte	.LFB13
+ 1300 005c 10000000 		.4byte	.LFE13
+ 1301 0060 00000000 		.4byte	.LFB14
+ 1302 0064 10000000 		.4byte	.LFE14
+ 1303 0068 00000000 		.4byte	0
+ 1304 006c 00000000 		.4byte	0
+ 1305              		.section	.debug_line,"",%progbits
+ 1306              	.Ldebug_line0:
+ 1307 0000 75010000 		.section	.debug_str,"MS",%progbits,1
+ 1307      02007500 
+ 1307      00000201 
+ 1307      FB0E0D00 
+ 1307      01010101 
+ 1308              	.LASF14:
+ 1309 0000 72656733 		.ascii	"reg32\000"
+ 1309      3200
+ 1310              	.LASF37:
+ 1311 0006 43795261 		.ascii	"CyRamVectors\000"
+ 1311      6D566563 
+ 1311      746F7273 
+ 1311      00
+ 1312              	.LASF11:
+ 1313 0013 666C6F61 		.ascii	"float\000"
+ 1313      7400
+ 1314              	.LASF19:
+ 1315 0019 61646472 		.ascii	"address\000"
+ 1315      65737300 
+ 1316              	.LASF3:
+ 1317 0021 73686F72 		.ascii	"short unsigned int\000"
+ 1317      7420756E 
+ 1317      7369676E 
+ 1317      65642069 
+ 1317      6E7400
+ 1318              	.LASF31:
+ 1319 0034 66726F6E 		.ascii	"front_derail_enc_isr_SetPending\000"
+ 1319      745F6465 
+ 1319      7261696C 
+ 1319      5F656E63 
+ 1319      5F697372 
+ 1320              	.LASF26:
+ 1321 0054 66726F6E 		.ascii	"front_derail_enc_isr_GetState\000"
+ 1321      745F6465 
+ 1321      7261696C 
+ 1321      5F656E63 
+ 1321      5F697372 
+ 1322              	.LASF35:
+ 1323 0072 433A5C55 		.ascii	"C:\\Users\\Henry\\Projects\\electronic_derailleur_e"
+ 1323      73657273 
+ 1323      5C48656E 
+ 1323      72795C50 
+ 1323      726F6A65 
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 32
+
+
+ 1324 00a1 6E706834 		.ascii	"nph459\\electronic_derailleur.cydsn\000"
+ 1324      35395C65 
+ 1324      6C656374 
+ 1324      726F6E69 
+ 1324      635F6465 
+ 1325              	.LASF30:
+ 1326 00c4 66726F6E 		.ascii	"front_derail_enc_isr_Stop\000"
+ 1326      745F6465 
+ 1326      7261696C 
+ 1326      5F656E63 
+ 1326      5F697372 
+ 1327              	.LASF24:
+ 1328 00de 66726F6E 		.ascii	"front_derail_enc_isr_Enable\000"
+ 1328      745F6465 
+ 1328      7261696C 
+ 1328      5F656E63 
+ 1328      5F697372 
+ 1329              	.LASF36:
+ 1330 00fa 66726F6E 		.ascii	"front_derail_enc_isr_GetPriority\000"
+ 1330      745F6465 
+ 1330      7261696C 
+ 1330      5F656E63 
+ 1330      5F697372 
+ 1331              	.LASF7:
+ 1332 011b 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1332      206C6F6E 
+ 1332      6720756E 
+ 1332      7369676E 
+ 1332      65642069 
+ 1333              	.LASF32:
+ 1334 0132 66726F6E 		.ascii	"front_derail_enc_isr_ClearPending\000"
+ 1334      745F6465 
+ 1334      7261696C 
+ 1334      5F656E63 
+ 1334      5F697372 
+ 1335              	.LASF1:
+ 1336 0154 756E7369 		.ascii	"unsigned char\000"
+ 1336      676E6564 
+ 1336      20636861 
+ 1336      7200
+ 1337              	.LASF21:
+ 1338 0162 696E7465 		.ascii	"interruptState\000"
+ 1338      72727570 
+ 1338      74537461 
+ 1338      746500
+ 1339              	.LASF5:
+ 1340 0171 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1340      20756E73 
+ 1340      69676E65 
+ 1340      6420696E 
+ 1340      7400
+ 1341              	.LASF9:
+ 1342 0183 75696E74 		.ascii	"uint8\000"
+ 1342      3800
+ 1343              	.LASF17:
+ 1344 0189 66726F6E 		.ascii	"front_derail_enc_isr_SetVector\000"
+ 1344      745F6465 
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 33
+
+
+ 1344      7261696C 
+ 1344      5F656E63 
+ 1344      5F697372 
+ 1345              	.LASF20:
+ 1346 01a8 7072696F 		.ascii	"priority\000"
+ 1346      72697479 
+ 1346      00
+ 1347              	.LASF12:
+ 1348 01b1 646F7562 		.ascii	"double\000"
+ 1348      6C6500
+ 1349              	.LASF10:
+ 1350 01b8 75696E74 		.ascii	"uint32\000"
+ 1350      333200
+ 1351              	.LASF18:
+ 1352 01bf 66726F6E 		.ascii	"front_derail_enc_isr_SetPriority\000"
+ 1352      745F6465 
+ 1352      7261696C 
+ 1352      5F656E63 
+ 1352      5F697372 
+ 1353              	.LASF8:
+ 1354 01e0 756E7369 		.ascii	"unsigned int\000"
+ 1354      676E6564 
+ 1354      20696E74 
+ 1354      00
+ 1355              	.LASF29:
+ 1356 01ed 66726F6E 		.ascii	"front_derail_enc_isr_StartEx\000"
+ 1356      745F6465 
+ 1356      7261696C 
+ 1356      5F656E63 
+ 1356      5F697372 
+ 1357              	.LASF39:
+ 1358 020a 43794578 		.ascii	"CyExitCriticalSection\000"
+ 1358      69744372 
+ 1358      69746963 
+ 1358      616C5365 
+ 1358      6374696F 
+ 1359              	.LASF38:
+ 1360 0220 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 1360      74657243 
+ 1360      72697469 
+ 1360      63616C53 
+ 1360      65637469 
+ 1361              	.LASF15:
+ 1362 0237 63796973 		.ascii	"cyisraddress\000"
+ 1362      72616464 
+ 1362      72657373 
+ 1362      00
+ 1363              	.LASF28:
+ 1364 0244 66726F6E 		.ascii	"front_derail_enc_isr_Start\000"
+ 1364      745F6465 
+ 1364      7261696C 
+ 1364      5F656E63 
+ 1364      5F697372 
+ 1365              	.LASF16:
+ 1366 025f 73697A65 		.ascii	"sizetype\000"
+ 1366      74797065 
+ 1366      00
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 34
+
+
+ 1367              	.LASF6:
+ 1368 0268 6C6F6E67 		.ascii	"long long int\000"
+ 1368      206C6F6E 
+ 1368      6720696E 
+ 1368      7400
+ 1369              	.LASF13:
+ 1370 0276 63686172 		.ascii	"char\000"
+ 1370      00
+ 1371              	.LASF27:
+ 1372 027b 66726F6E 		.ascii	"front_derail_enc_isr_Disable\000"
+ 1372      745F6465 
+ 1372      7261696C 
+ 1372      5F656E63 
+ 1372      5F697372 
+ 1373              	.LASF25:
+ 1374 0298 66726F6E 		.ascii	"front_derail_enc_isr_GetVector\000"
+ 1374      745F6465 
+ 1374      7261696C 
+ 1374      5F656E63 
+ 1374      5F697372 
+ 1375              	.LASF33:
+ 1376 02b7 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1376      4320342E 
+ 1376      392E3320 
+ 1376      32303135 
+ 1376      30333033 
+ 1377 02ea 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 1377      20726576 
+ 1377      6973696F 
+ 1377      6E203232 
+ 1377      31323230 
+ 1378 031d 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1378      66756E63 
+ 1378      74696F6E 
+ 1378      2D736563 
+ 1378      74696F6E 
+ 1379              	.LASF2:
+ 1380 0345 73686F72 		.ascii	"short int\000"
+ 1380      7420696E 
+ 1380      7400
+ 1381              	.LASF34:
+ 1382 034f 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\front_derail_enc_isr.c\000"
+ 1382      6E657261 
+ 1382      7465645F 
+ 1382      536F7572 
+ 1382      63655C50 
+ 1383              	.LASF22:
+ 1384 037f 7072696F 		.ascii	"priorityOffset\000"
+ 1384      72697479 
+ 1384      4F666673 
+ 1384      657400
+ 1385              	.LASF4:
+ 1386 038e 6C6F6E67 		.ascii	"long int\000"
+ 1386      20696E74 
+ 1386      00
+ 1387              	.LASF23:
+ 1388 0397 66726F6E 		.ascii	"front_derail_enc_isr_Interrupt\000"
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccVgeCsI.s 			page 35
+
+
+ 1388      745F6465 
+ 1388      7261696C 
+ 1388      5F656E63 
+ 1388      5F697372 
+ 1389              	.LASF0:
+ 1390 03b6 7369676E 		.ascii	"signed char\000"
+ 1390      65642063 
+ 1390      68617200 
+ 1391              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

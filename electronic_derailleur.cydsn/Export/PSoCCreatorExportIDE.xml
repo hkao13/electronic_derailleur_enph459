@@ -129,6 +129,17 @@
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\in_4.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\in_4.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\in_4_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\quad_dec_clk.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\quad_dec_clk.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\decoder_A.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\decoder_A.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\decoder_A_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\decoder_B.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\decoder_B.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\decoder_B_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\QuadDec.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\QuadDec.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\QuadDec_PM.c</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\Export\ARM_GCC_Generic">

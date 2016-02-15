@@ -61,6 +61,17 @@
   <file name="C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\codegentemp\in_4.c" value="ARM_C_FILE;in_4" />
   <file name="C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\codegentemp\in_4.h" value="NONE;in_4" />
   <file name="C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\codegentemp\in_4_aliases.h" value="NONE;in_4" />
+  <file name="C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\codegentemp\quad_dec_clk.c" value="ARM_C_FILE;quad_dec_clk" />
+  <file name="C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\codegentemp\quad_dec_clk.h" value="NONE;quad_dec_clk" />
+  <file name="C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\codegentemp\decoder_A.c" value="ARM_C_FILE;decoder_A" />
+  <file name="C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\codegentemp\decoder_A.h" value="NONE;decoder_A" />
+  <file name="C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\codegentemp\decoder_A_aliases.h" value="NONE;decoder_A" />
+  <file name="C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\codegentemp\decoder_B.c" value="ARM_C_FILE;decoder_B" />
+  <file name="C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\codegentemp\decoder_B.h" value="NONE;decoder_B" />
+  <file name="C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\codegentemp\decoder_B_aliases.h" value="NONE;decoder_B" />
+  <file name="C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\codegentemp\QuadDec.c" value="ARM_C_FILE;QuadDec" />
+  <file name="C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\codegentemp\QuadDec.h" value="NONE;QuadDec" />
+  <file name="C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\codegentemp\QuadDec_PM.c" value="ARM_C_FILE;QuadDec" />
   <file name="C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\codegentemp\UART_SCBCLK.c" value="ARM_C_FILE;UART_SCBCLK" />
   <file name="C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\codegentemp\UART_SCBCLK.h" value="NONE;UART_SCBCLK" />
   <file name="C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\codegentemp\UART_tx.c" value="ARM_C_FILE;UART_tx" />

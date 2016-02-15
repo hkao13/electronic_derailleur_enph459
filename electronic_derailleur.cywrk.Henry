@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="electronic_derailleur\electronic_derailleur\Source Files\main.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="electronic_derailleur\electronic_derailleur\electronic_derailleur.cydwr">
 <ExpandedNodeIds>
 <v>electronic_derailleur</v>
 <v>electronic_derailleur\electronic_derailleur</v>
@@ -49,6 +49,14 @@
 <v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\cy_lfclk</v>
 <v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\cy_lfclk\CyLFClk.c</v>
 <v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\cy_lfclk\CyLFClk.h</v>
+<v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\decoder_A</v>
+<v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\decoder_A\decoder_A.c</v>
+<v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\decoder_A\decoder_A.h</v>
+<v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\decoder_A\decoder_A_aliases.h</v>
+<v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\decoder_B</v>
+<v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\decoder_B\decoder_B.c</v>
+<v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\decoder_B\decoder_B.h</v>
+<v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\decoder_B\decoder_B_aliases.h</v>
 <v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\en_1_2</v>
 <v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\en_1_2\en_1_2.c</v>
 <v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\en_1_2\en_1_2.h</v>
@@ -84,6 +92,13 @@
 <v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\pwm_clock</v>
 <v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\pwm_clock\pwm_clock.c</v>
 <v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\pwm_clock\pwm_clock.h</v>
+<v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\quad_dec_clk</v>
+<v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\quad_dec_clk\quad_dec_clk.c</v>
+<v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\quad_dec_clk\quad_dec_clk.h</v>
+<v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\QuadDec</v>
+<v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\QuadDec\QuadDec.c</v>
+<v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\QuadDec\QuadDec.h</v>
+<v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\QuadDec\QuadDec_PM.c</v>
 <v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\rear_motor</v>
 <v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\rear_motor\rear_motor.c</v>
 <v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\rear_motor\rear_motor.h</v>
@@ -171,8 +186,8 @@
 <v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\cy_lfclk</v>
 <v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\cy_lfclk\CyLFClk.c</v>
 <v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\cy_lfclk\CyLFClk.h</v>
-<v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\en_1_2</v>
-<v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\en_1_2\en_1_2.c</v>
+<v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\decoder_A</v>
+<v>electronic_derailleur\electronic_derailleur\Generated_Source\PSoC4\decoder_A\decoder_A.c</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -206,6 +221,8 @@
 <v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\cymetadata.lst</v>
 <v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\cyPm.lst</v>
 <v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\decoder_A.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\decoder_B.lst</v>
 <v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\en_1_2.lst</v>
 <v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\en_3_4.lst</v>
 <v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\front_motor.lst</v>
@@ -218,6 +235,9 @@
 <v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\PWM.lst</v>
 <v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\pwm_clock.lst</v>
 <v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\PWM_PM.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\quad_dec_clk.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\QuadDec.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\QuadDec_PM.lst</v>
 <v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\rear_motor.lst</v>
 <v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\rear_motor_PM.lst</v>
 <v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\shifter_isr.lst</v>
@@ -255,6 +275,8 @@
 <v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\cymetadata.lst</v>
 <v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\cyPm.lst</v>
 <v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\decoder_A.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\decoder_B.lst</v>
 <v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\en_1_2.lst</v>
 <v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\en_3_4.lst</v>
 <v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\front_motor.lst</v>
@@ -267,15 +289,13 @@
 <v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\PWM.lst</v>
 <v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\pwm_clock.lst</v>
 <v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\PWM_PM.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\quad_dec_clk.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\QuadDec.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\QuadDec_PM.lst</v>
 <v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\rear_motor.lst</v>
 <v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\rear_motor_PM.lst</v>
 <v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\shifter_isr.lst</v>
 <v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\shifter_switches.lst</v>
-<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\UART.lst</v>
-<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\UART_BOOT.lst</v>
-<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\UART_PM.lst</v>
-<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\UART_rx.lst</v>
-<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\UART_SCBCLK.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -292,7 +312,8 @@
 <v>electronic_derailleur\electronic_derailleur\System Reference Guides</v>
 <v>electronic_derailleur\electronic_derailleur\System Reference Guides\cy_boot_v5_20</v>
 <v>electronic_derailleur\electronic_derailleur\System Reference Guides\cy_lfclk_v1_0</v>
-<v>electronic_derailleur\electronic_derailleur\cy_clock_v2_20.pdf</v>
+<v>electronic_derailleur\electronic_derailleur\cy_clock_v2_20</v>
+<v>electronic_derailleur\electronic_derailleur\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
 <v>electronic_derailleur\electronic_derailleur\cy_constant_v1_0.pdf</v>
 <v>electronic_derailleur\electronic_derailleur\cy_isr_v1_70.pdf</v>
 <v>electronic_derailleur\electronic_derailleur\cy_pins_v2_10</v>
@@ -304,6 +325,7 @@
 <v>electronic_derailleur\electronic_derailleur\SCB_P4_v3_0.pdf</v>
 <v>electronic_derailleur\electronic_derailleur\SwitchSPST_v1_0</v>
 <v>electronic_derailleur\electronic_derailleur\SwitchSPST_v1_0\SwitchSPST_v1_0.pdf</v>
+<v>electronic_derailleur\electronic_derailleur\TCPWM_P4_v2_0.pdf</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>electronic_derailleur</v>
@@ -313,7 +335,8 @@
 <v>electronic_derailleur\electronic_derailleur\System Reference Guides</v>
 <v>electronic_derailleur\electronic_derailleur\System Reference Guides\cy_boot_v5_20</v>
 <v>electronic_derailleur\electronic_derailleur\System Reference Guides\cy_lfclk_v1_0</v>
-<v>electronic_derailleur\electronic_derailleur\cy_clock_v2_20.pdf</v>
+<v>electronic_derailleur\electronic_derailleur\cy_clock_v2_20</v>
+<v>electronic_derailleur\electronic_derailleur\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
 <v>electronic_derailleur\electronic_derailleur\cy_constant_v1_0.pdf</v>
 <v>electronic_derailleur\electronic_derailleur\cy_isr_v1_70.pdf</v>
 <v>electronic_derailleur\electronic_derailleur\cy_pins_v2_10</v>
@@ -325,6 +348,7 @@
 <v>electronic_derailleur\electronic_derailleur\SCB_P4_v3_0.pdf</v>
 <v>electronic_derailleur\electronic_derailleur\SwitchSPST_v1_0</v>
 <v>electronic_derailleur\electronic_derailleur\SwitchSPST_v1_0\SwitchSPST_v1_0.pdf</v>
+<v>electronic_derailleur\electronic_derailleur\TCPWM_P4_v2_0.pdf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
@@ -333,7 +357,11 @@
 </userData>
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
-<OpenDocs />
+<OpenDocs>
+<name v=".\electronic_derailleur.cydsn\electronic_derailleur.cydwr" />
+<name v=".\electronic_derailleur.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\electronic_derailleur.cydsn\main.c" />
+</OpenDocs>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
