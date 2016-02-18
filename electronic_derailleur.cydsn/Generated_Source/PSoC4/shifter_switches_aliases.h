@@ -38,6 +38,18 @@
 #define shifter_switches_1_DR		(shifter_switches__1__DR)
 #define shifter_switches_1_SHIFT	(shifter_switches__1__SHIFT)
 
+#define shifter_switches_2		(shifter_switches__2__PC)
+#define shifter_switches_2_PS		(shifter_switches__2__PS)
+#define shifter_switches_2_PC		(shifter_switches__2__PC)
+#define shifter_switches_2_DR		(shifter_switches__2__DR)
+#define shifter_switches_2_SHIFT	(shifter_switches__2__SHIFT)
+
+#define shifter_switches_3		(shifter_switches__3__PC)
+#define shifter_switches_3_PS		(shifter_switches__3__PS)
+#define shifter_switches_3_PC		(shifter_switches__3__PC)
+#define shifter_switches_3_DR		(shifter_switches__3__DR)
+#define shifter_switches_3_SHIFT	(shifter_switches__3__SHIFT)
+
 
 #endif /* End Pins shifter_switches_ALIASES_H */
 

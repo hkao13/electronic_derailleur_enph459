@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccgz6xeo.s 			page 1
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHPkoGY.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccgz6xeo.s 			page 1
   30:.\Generated_Source\PSoC4/rear_motor_PM.c **** * Summary:
   31:.\Generated_Source\PSoC4/rear_motor_PM.c **** *  Saves the control register value.
   32:.\Generated_Source\PSoC4/rear_motor_PM.c **** *
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccgz6xeo.s 			page 2
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHPkoGY.s 			page 2
 
 
   33:.\Generated_Source\PSoC4/rear_motor_PM.c **** * Parameters:
@@ -85,7 +85,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccgz6xeo.s 			page 1
   36              	.L3:
   37 000a C046     		.align	2
   38              	.L2:
-  39 000c 71000F40 		.word	1074724977
+  39 000c 73000F40 		.word	1074724979
   40 0010 00000000 		.word	.LANCHOR0
   41              		.cfi_endproc
   42              	.LFE0:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccgz6xeo.s 			page 1
   61:.\Generated_Source\PSoC4/rear_motor_PM.c **** void rear_motor_RestoreConfig(void) 
   62:.\Generated_Source\PSoC4/rear_motor_PM.c **** {
   52              		.loc 1 62 0
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccgz6xeo.s 			page 3
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHPkoGY.s 			page 3
 
 
   53              		.cfi_startproc
@@ -136,7 +136,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccgz6xeo.s 			page 1
   63 000a C046     		.align	2
   64              	.L5:
   65 000c 00000000 		.word	.LANCHOR0
-  66 0010 71000F40 		.word	1074724977
+  66 0010 73000F40 		.word	1074724979
   67              		.cfi_endproc
   68              	.LFE1:
   69              		.size	rear_motor_RestoreConfig, .-rear_motor_RestoreConfig
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccgz6xeo.s 			page 1
   86              	.LVL0:
   84:.\Generated_Source\PSoC4/rear_motor_PM.c **** }
   87              		.loc 1 84 0
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccgz6xeo.s 			page 4
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHPkoGY.s 			page 4
 
 
   88              		@ sp needed
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccgz6xeo.s 			page 1
  122 0000 00       		.space	1
  123 0001 000000   		.text
  124              	.Letext0:
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccgz6xeo.s 			page 5
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHPkoGY.s 			page 5
 
 
  125              		.file 2 ".\\Generated_Source\\PSoC4\\cytypes.h"
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccgz6xeo.s 			page 1
  179 0066 07       		.byte	0x7
  180 0067 BA000000 		.4byte	.LASF8
  181 006b 04       		.uleb128 0x4
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccgz6xeo.s 			page 6
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHPkoGY.s 			page 6
 
 
  182 006c AD010000 		.4byte	.LASF12
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccgz6xeo.s 			page 1
  236 00dc 01       		.uleb128 0x1
  237 00dd 9C       		.byte	0x9c
  238 00de 0A       		.uleb128 0xa
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccgz6xeo.s 			page 7
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHPkoGY.s 			page 7
 
 
  239 00df 23020000 		.4byte	.LASF17
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccgz6xeo.s 			page 1
  293 0012 00       		.byte	0
  294 0013 02       		.uleb128 0x2
  295 0014 24       		.uleb128 0x24
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccgz6xeo.s 			page 8
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHPkoGY.s 			page 8
 
 
  296 0015 00       		.byte	0
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccgz6xeo.s 			page 1
  350 004b 13       		.uleb128 0x13
  351 004c 01       		.byte	0x1
  352 004d 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccgz6xeo.s 			page 9
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHPkoGY.s 			page 9
 
 
  353 004e 0B       		.uleb128 0xb
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccgz6xeo.s 			page 1
  407 0085 3A       		.uleb128 0x3a
  408 0086 0B       		.uleb128 0xb
  409 0087 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccgz6xeo.s 			page 10
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHPkoGY.s 			page 10
 
 
  410 0088 0B       		.uleb128 0xb
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccgz6xeo.s 			page 1
  464 0028 00000000 		.4byte	.LFB3
  465 002c 08000000 		.4byte	.LFE3-.LFB3
  466 0030 00000000 		.4byte	0
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccgz6xeo.s 			page 11
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHPkoGY.s 			page 11
 
 
  467 0034 00000000 		.4byte	0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccgz6xeo.s 			page 1
  496              	.LASF3:
  497 0093 73686F72 		.ascii	"short unsigned int\000"
  497      7420756E 
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccgz6xeo.s 			page 12
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHPkoGY.s 			page 12
 
 
  497      7369676E 
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccgz6xeo.s 			page 1
  517      66756E63 
  517      74696F6E 
  517      2D736563 
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccgz6xeo.s 			page 13
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccHPkoGY.s 			page 13
 
 
  517      74696F6E 

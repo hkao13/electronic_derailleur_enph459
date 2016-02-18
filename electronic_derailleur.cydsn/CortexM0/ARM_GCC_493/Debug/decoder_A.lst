@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccG8D903.s 			page 1
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccU5xG7z.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccG8D903.s 			page 1
   30:.\Generated_Source\PSoC4/decoder_A.c **** ********************************************************************************
   31:.\Generated_Source\PSoC4/decoder_A.c **** *
   32:.\Generated_Source\PSoC4/decoder_A.c **** * Summary:
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccG8D903.s 			page 2
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccU5xG7z.s 			page 2
 
 
   33:.\Generated_Source\PSoC4/decoder_A.c **** *  Assign a new value to the digital port's data output register.  
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccG8D903.s 			page 1
   51:.\Generated_Source\PSoC4/decoder_A.c **** * Function Name: decoder_A_SetDriveMode
   52:.\Generated_Source\PSoC4/decoder_A.c **** ********************************************************************************
   53:.\Generated_Source\PSoC4/decoder_A.c **** *
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccG8D903.s 			page 3
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccU5xG7z.s 			page 3
 
 
   54:.\Generated_Source\PSoC4/decoder_A.c **** * Summary:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccG8D903.s 			page 1
   79:.\Generated_Source\PSoC4/decoder_A.c **** /*******************************************************************************
   80:.\Generated_Source\PSoC4/decoder_A.c **** * Function Name: decoder_A_Read
   81:.\Generated_Source\PSoC4/decoder_A.c **** ********************************************************************************
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccG8D903.s 			page 4
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccU5xG7z.s 			page 4
 
 
   82:.\Generated_Source\PSoC4/decoder_A.c **** *
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccG8D903.s 			page 1
  111:.\Generated_Source\PSoC4/decoder_A.c **** *  None 
  112:.\Generated_Source\PSoC4/decoder_A.c **** *
  113:.\Generated_Source\PSoC4/decoder_A.c **** * Return: 
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccG8D903.s 			page 5
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccU5xG7z.s 			page 5
 
 
  114:.\Generated_Source\PSoC4/decoder_A.c **** *  Returns the current value assigned to the Digital Port's data output register
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccG8D903.s 			page 1
  141              		.loc 1 142 0
  142              		.cfi_startproc
  143:.\Generated_Source\PSoC4/decoder_A.c **** 		uint8 maskedStatus = (uint8)(decoder_A_INTSTAT & decoder_A_MASK);
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccG8D903.s 			page 6
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccU5xG7z.s 			page 6
 
 
  143              		.loc 1 143 0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccG8D903.s 			page 1
  194 0041 02       		.uleb128 0x2
  195 0042 04       		.byte	0x4
  196 0043 05       		.byte	0x5
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccG8D903.s 			page 7
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccU5xG7z.s 			page 7
 
 
  197 0044 F4010000 		.4byte	.LASF4
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccG8D903.s 			page 1
  251 00ae 00000000 		.4byte	.LFB0
  252 00b2 18000000 		.4byte	.LFE0-.LFB0
  253 00b6 01       		.uleb128 0x1
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccG8D903.s 			page 8
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccU5xG7z.s 			page 8
 
 
  254 00b7 9C       		.byte	0x9c
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccG8D903.s 			page 1
  308 0135 00000000 		.4byte	.LFB4
  309 0139 10000000 		.4byte	.LFE4-.LFB4
  310 013d 01       		.uleb128 0x1
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccG8D903.s 			page 9
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccU5xG7z.s 			page 9
 
 
  311 013e 9C       		.byte	0x9c
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccG8D903.s 			page 1
  365 002a 16       		.uleb128 0x16
  366 002b 00       		.byte	0
  367 002c 03       		.uleb128 0x3
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccG8D903.s 			page 10
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccU5xG7z.s 			page 10
 
 
  368 002d 0E       		.uleb128 0xe
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccG8D903.s 			page 1
  422 0064 08       		.uleb128 0x8
  423 0065 05       		.uleb128 0x5
  424 0066 00       		.byte	0
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccG8D903.s 			page 11
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccU5xG7z.s 			page 11
 
 
  425 0067 03       		.uleb128 0x3
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccG8D903.s 			page 1
  479 009e 01       		.byte	0x1
  480 009f 3F       		.uleb128 0x3f
  481 00a0 19       		.uleb128 0x19
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccG8D903.s 			page 12
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccU5xG7z.s 			page 12
 
 
  482 00a1 03       		.uleb128 0x3
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccG8D903.s 			page 1
  536 0025 10000000 		.4byte	.LVL3
  537 0029 0100     		.2byte	0x1
  538 002b 52       		.byte	0x52
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccG8D903.s 			page 13
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccU5xG7z.s 			page 13
 
 
  539 002c 10000000 		.4byte	.LVL3
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccG8D903.s 			page 1
  593              		.section	.debug_line,"",%progbits
  594              	.Ldebug_line0:
  595 0000 AA000000 		.section	.debug_str,"MS",%progbits,1
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccG8D903.s 			page 14
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccU5xG7z.s 			page 14
 
 
  595      02004800 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccG8D903.s 			page 1
  616      6C6500
  617              	.LASF16:
  618 00d3 6465636F 		.ascii	"decoder_A_SetDriveMode\000"
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccG8D903.s 			page 15
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccU5xG7z.s 			page 15
 
 
  618      6465725F 
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccG8D903.s 			page 1
  640 01bc 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
  640      66756E63 
  640      74696F6E 
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccG8D903.s 			page 16
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccU5xG7z.s 			page 16
 
 
  640      2D736563 

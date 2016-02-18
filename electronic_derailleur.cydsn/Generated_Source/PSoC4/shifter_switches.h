@@ -53,7 +53,7 @@ uint8   shifter_switches_ClearInterrupt(void) ;
 /* Digital Port Constants */
 #define shifter_switches_MASK               shifter_switches__MASK
 #define shifter_switches_SHIFT              shifter_switches__SHIFT
-#define shifter_switches_WIDTH              2u
+#define shifter_switches_WIDTH              4u
 
 
 /***************************************

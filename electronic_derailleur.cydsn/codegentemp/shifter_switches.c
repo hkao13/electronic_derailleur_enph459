@@ -74,6 +74,8 @@ void shifter_switches_SetDriveMode(uint8 mode)
 {
 	SetP4PinDriveMode(shifter_switches__0__SHIFT, mode);
 	SetP4PinDriveMode(shifter_switches__1__SHIFT, mode);
+	SetP4PinDriveMode(shifter_switches__2__SHIFT, mode);
+	SetP4PinDriveMode(shifter_switches__3__SHIFT, mode);
 }
 
 

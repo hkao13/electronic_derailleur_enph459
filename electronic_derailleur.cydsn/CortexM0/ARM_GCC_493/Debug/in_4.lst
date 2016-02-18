@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 1
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2H1Vun.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 1
   30:.\Generated_Source\PSoC4/in_4.c **** ********************************************************************************
   31:.\Generated_Source\PSoC4/in_4.c **** *
   32:.\Generated_Source\PSoC4/in_4.c **** * Summary:
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 2
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2H1Vun.s 			page 2
 
 
   33:.\Generated_Source\PSoC4/in_4.c **** *  Assign a new value to the digital port's data output register.  
@@ -79,14 +79,14 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 1
   29              		.loc 1 44 0
   30 0000 0449     		ldr	r1, .L2
   31 0002 0A68     		ldr	r2, [r1]
-  32 0004 F723     		mov	r3, #247
+  32 0004 DF23     		mov	r3, #223
   33 0006 1A40     		and	r2, r3
   34              	.LVL1:
   45:.\Generated_Source\PSoC4/in_4.c ****     drVal = (drVal | ((uint8)(value << in_4_SHIFT) & in_4_MASK));
   35              		.loc 1 45 0
-  36 0008 C000     		lsl	r0, r0, #3
+  36 0008 4001     		lsl	r0, r0, #5
   37              	.LVL2:
-  38 000a EF3B     		sub	r3, r3, #239
+  38 000a BF3B     		sub	r3, r3, #191
   39 000c 1840     		and	r0, r3
   40 000e 1043     		orr	r0, r2
   41              	.LVL3:
@@ -100,7 +100,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 1
   47              	.L3:
   48              		.align	2
   49              	.L2:
-  50 0014 00000440 		.word	1074003968
+  50 0014 00030440 		.word	1074004736
   51              		.cfi_endproc
   52              	.LFE0:
   53              		.size	in_4_Write, .-in_4_Write
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 1
   51:.\Generated_Source\PSoC4/in_4.c **** * Function Name: in_4_SetDriveMode
   52:.\Generated_Source\PSoC4/in_4.c **** ********************************************************************************
   53:.\Generated_Source\PSoC4/in_4.c **** *
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 3
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2H1Vun.s 			page 3
 
 
   54:.\Generated_Source\PSoC4/in_4.c **** * Summary:
@@ -151,7 +151,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 1
   67 0002 1168     		ldr	r1, [r2]
   68 0004 034B     		ldr	r3, .L5+4
   69 0006 0B40     		and	r3, r1
-  70 0008 4002     		lsl	r0, r0, #9
+  70 0008 C003     		lsl	r0, r0, #15
   71              	.LVL5:
   72 000a 1843     		orr	r0, r3
   73 000c 1060     		str	r0, [r2]
@@ -162,8 +162,8 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 1
   77              	.L6:
   78              		.align	2
   79              	.L5:
-  80 0010 08000440 		.word	1074003976
-  81 0014 FFF1FFFF 		.word	-3585
+  80 0010 08030440 		.word	1074004744
+  81 0014 FF7FFCFF 		.word	-229377
   82              		.cfi_endproc
   83              	.LFE1:
   84              		.size	in_4_SetDriveMode, .-in_4_SetDriveMode
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 1
   77:.\Generated_Source\PSoC4/in_4.c **** 
   78:.\Generated_Source\PSoC4/in_4.c **** 
   79:.\Generated_Source\PSoC4/in_4.c **** /*******************************************************************************
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 4
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2H1Vun.s 			page 4
 
 
   80:.\Generated_Source\PSoC4/in_4.c **** * Function Name: in_4_Read
@@ -206,7 +206,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 1
   95              		.loc 1 99 0
   96 0000 024B     		ldr	r3, .L8
   97 0002 1868     		ldr	r0, [r3]
-  98 0004 0007     		lsl	r0, r0, #28
+  98 0004 8006     		lsl	r0, r0, #26
   99 0006 C00F     		lsr	r0, r0, #31
  100:.\Generated_Source\PSoC4/in_4.c **** }
  100              		.loc 1 100 0
@@ -215,7 +215,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 1
  103              	.L9:
  104 000a C046     		.align	2
  105              	.L8:
- 106 000c 04000440 		.word	1074003972
+ 106 000c 04030440 		.word	1074004740
  107              		.cfi_endproc
  108              	.LFE2:
  109              		.size	in_4_Read, .-in_4_Read
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 1
  109:.\Generated_Source\PSoC4/in_4.c **** *
  110:.\Generated_Source\PSoC4/in_4.c **** * Parameters:  
  111:.\Generated_Source\PSoC4/in_4.c **** *  None 
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 5
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2H1Vun.s 			page 5
 
 
  112:.\Generated_Source\PSoC4/in_4.c **** *
@@ -254,7 +254,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 1
  120              		.loc 1 119 0
  121 0000 024B     		ldr	r3, .L11
  122 0002 1868     		ldr	r0, [r3]
- 123 0004 0007     		lsl	r0, r0, #28
+ 123 0004 8006     		lsl	r0, r0, #26
  124 0006 C00F     		lsr	r0, r0, #31
  120:.\Generated_Source\PSoC4/in_4.c **** }
  125              		.loc 1 120 0
@@ -263,7 +263,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 1
  128              	.L12:
  129 000a C046     		.align	2
  130              	.L11:
- 131 000c 00000440 		.word	1074003968
+ 131 000c 00030440 		.word	1074004736
  132              		.cfi_endproc
  133              	.LFE3:
  134              		.size	in_4_ReadDataReg, .-in_4_ReadDataReg
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 1
  141:.\Generated_Source\PSoC4/in_4.c ****     uint8 in_4_ClearInterrupt(void) 
  142:.\Generated_Source\PSoC4/in_4.c ****     {
  143              		.loc 1 142 0
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 6
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2H1Vun.s 			page 6
 
 
  144              		.cfi_startproc
@@ -306,7 +306,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 1
  145              		.loc 1 143 0
  146 0000 034A     		ldr	r2, .L14
  147 0002 1068     		ldr	r0, [r2]
- 148 0004 0823     		mov	r3, #8
+ 148 0004 2023     		mov	r3, #32
  149 0006 1840     		and	r0, r3
  150              	.LVL6:
  144:.\Generated_Source\PSoC4/in_4.c **** 		in_4_INTSTAT = maskedStatus;
@@ -314,7 +314,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 1
  152 0008 1060     		str	r0, [r2]
  145:.\Generated_Source\PSoC4/in_4.c ****         return maskedStatus >> in_4_SHIFT;
  153              		.loc 1 145 0
- 154 000a C008     		lsr	r0, r0, #3
+ 154 000a 4009     		lsr	r0, r0, #5
  155              	.LVL7:
  156 000c C0B2     		uxtb	r0, r0
  146:.\Generated_Source\PSoC4/in_4.c ****     }
@@ -324,7 +324,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 1
  160              	.L15:
  161              		.align	2
  162              	.L14:
- 163 0010 10000440 		.word	1074003984
+ 163 0010 10030440 		.word	1074004752
  164              		.cfi_endproc
  165              	.LFE4:
  166              		.size	in_4_ClearInterrupt, .-in_4_ClearInterrupt
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 1
  194 0035 05       		.byte	0x5
  195 0036 C8010000 		.4byte	.LASF2
  196 003a 02       		.uleb128 0x2
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 7
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2H1Vun.s 			page 7
 
 
  197 003b 02       		.byte	0x2
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 1
  251 00a2 06       		.uleb128 0x6
  252 00a3 76000000 		.4byte	0x76
  253 00a7 07       		.uleb128 0x7
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 8
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2H1Vun.s 			page 8
 
 
  254 00a8 FE010000 		.4byte	.LASF15
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 1
  308 0129 9C       		.byte	0x9c
  309 012a 0B       		.uleb128 0xb
  310 012b 8A000000 		.4byte	.LASF21
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 9
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2H1Vun.s 			page 9
 
 
  311 012f 01       		.byte	0x1
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 1
  365 0025 03       		.uleb128 0x3
  366 0026 08       		.uleb128 0x8
  367 0027 00       		.byte	0
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 10
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2H1Vun.s 			page 10
 
 
  368 0028 00       		.byte	0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 1
  422 005f 19       		.uleb128 0x19
  423 0060 01       		.uleb128 0x1
  424 0061 13       		.uleb128 0x13
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 11
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2H1Vun.s 			page 11
 
 
  425 0062 00       		.byte	0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 1
  479 0099 19       		.uleb128 0x19
  480 009a 00       		.byte	0
  481 009b 00       		.byte	0
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 12
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2H1Vun.s 			page 12
 
 
  482 009c 0B       		.uleb128 0xb
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 1
  536 003f 00000000 		.4byte	.LVL4
  537 0043 0A000000 		.4byte	.LVL5
  538 0047 0100     		.2byte	0x1
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 13
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2H1Vun.s 			page 13
 
 
  539 0049 50       		.byte	0x50
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 1
  593 0020 00000000 		.4byte	.LFB4
  594 0024 14000000 		.4byte	.LFE4
  595 0028 00000000 		.4byte	0
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 14
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2H1Vun.s 			page 14
 
 
  596 002c 00000000 		.4byte	0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 1
  619              	.LASF3:
  620 00b0 73686F72 		.ascii	"short unsigned int\000"
  620      7420756E 
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 15
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2H1Vun.s 			page 15
 
 
  620      7369676E 
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 1
  642      66756E63 
  642      74696F6E 
  642      2D736563 
-ARM GAS  C:\Users\Henry\AppData\Local\Temp\ccUL2kuO.s 			page 16
+ARM GAS  C:\Users\Henry\AppData\Local\Temp\cc2H1Vun.s 			page 16
 
 
  642      74696F6E 
