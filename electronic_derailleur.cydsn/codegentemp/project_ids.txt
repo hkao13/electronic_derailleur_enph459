@@ -1,5 +1,6 @@
-C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\electronic_derailleur.cyprj|4d60d0d6-eeab-46f8-a96f-fa1ee63ba6d2
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|517b303a-01dd-4fc5-aba6-e4a5d7e65562
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|7503e887-a0d2-4343-a1bd-725732ddbb03
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|65d8fd17-1d39-4357-b6ea-dbebdd025857
-C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|8e480817-87b1-4e31-99d8-9d0540a5812b
+C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\electronic_derailleur.cyprj|cfe2b8ed-9f6b-4fa6-86e6-5e7cc20c96b9
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|195bab49-4249-4556-8761-05b7a190dc88
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|77d1638f-392f-4578-ba5e-f28973221510
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|912d76bc-201b-4ece-822d-f9139613f84f
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|99d19895-9ccc-4efe-add1-45b93509314b
+C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|7a0d29c2-93c0-4c2f-a754-cd5a7b8629e7

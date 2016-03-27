@@ -1,5 +1,5 @@
 # electronic_derailleur
-# 2016-02-18 02:58:14Z
+# 2016-02-19 02:53:08Z
 
 # IO_6@[IOP=(0)][IoId=(6)] is reserved: SWDDebugEnabled
 dont_use_io iocell 0 6
@@ -20,9 +20,9 @@ set_io "en_1_2(0)" iocell 3 0
 set_io "en_3_4(0)" iocell 3 3
 set_io "in_1(0)" iocell 3 1
 set_io "in_2(0)" iocell 3 2
-set_io "in_3(0)" iocell 3 4
-set_io "in_4(0)" iocell 3 5
 set_io "decoder_A(0)" iocell 2 0
 set_io "decoder_B(0)" iocell 2 1
 set_io "rear_pot_feedback(0)" iocell 2 2
+set_io "\I2C:sda(0)\" iocell 3 4
+set_io "\I2C:scl(0)\" iocell 3 5
 set_location "\ADC_SAR_SEQ:cy_psoc4_sar\" p4sarcell -1 -1 0
