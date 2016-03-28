@@ -322,6 +322,40 @@
 <VisibleNodeIds>
 <v>electronic_derailleur</v>
 <v>electronic_derailleur\electronic_derailleur</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\ADC_SAR_SEQ.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\ADC_SAR_SEQ_INT.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\ADC_SAR_SEQ_intClock.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\ADC_SAR_SEQ_IRQ.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\ADC_SAR_SEQ_PM.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\Cm0Start.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\CyFlash.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\CyLFClk.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\CyLib.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\cymetadata.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\cyPm.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\cyutils.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\decoder_A.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\decoder_B.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\en_1_2.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\en_3_4.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\front_motor.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\front_motor_PM.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\I2C.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\I2C_BOOT.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\I2C_I2C.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\I2C_I2C_BOOT.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\I2C_I2C_INT.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\I2C_I2C_MASTER.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\I2C_PM.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\I2C_SCB_IRQ.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\I2C_SCBCLK.lst</v>
+<v>electronic_derailleur\electronic_derailleur\CortexM0\ARM_GCC_493\Debug\Listing Files\I2C_scl.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>

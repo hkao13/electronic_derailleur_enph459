@@ -16,15 +16,15 @@
 #include <strings.h>
 #include <project.h>
 
+#define NORMAL = 0x0
+#define TUNING = 0x1
+
 #define STOP 0x00
 #define ALL_ON 0x00
-#define FRONT_UP 0x02
-#define FRONT_DN 0x01
+#define FRONT_UP 0x01
+#define FRONT_DN 0x02
 #define REAR_UP 0x01
 #define REAR_DN 0x02
-
-#define FRONT_UPPER_LIMIT 1500u
-#define FRONT_LOWER_LIMIT 1500u
 
 #define ADDRESS1 0x50      /* Address of the EEPROM slave */
 
@@ -41,22 +41,25 @@ char bufferUART[20] = {};
 
 typedef struct FrontDerailleur
 {   
-    uint16 position; // Binary position, 0 for small, 1 for large chainring.
+    uint8 position; // Binary position, 0 for small, 1 for large chainring.
     uint16 current_pos; // Quad encoder value for current/last saved position.
     uint16 tuned_pos[2]; // Tuned quad encoder values for small and large chainring positions
     uint16 eep_offset; // FD EEPROM offset save address.
 } frntder;
 
 frntder frontDerailInit(uint8* dataI2C);
+void frontDerailToData(uint8* dataI2C, frntder fd);
 
 int main()
 {
-    uint8 dataI2C[] = {};
-    /* Initial front motor position variable */
-    uint32 ref_front_count = 0;
-   
+    int mode = 0;
     
-    /*
+    /* UART buffer to store output to console */
+    char bufferUART[20] = {};
+    
+    uint8 dataI2C[] = {};
+    
+    
     uint8 temp[] = {};
     temp[0] = 0;
     temp[1] = (uint8)((int)32767 >> 8);
@@ -65,17 +68,10 @@ int main()
     temp[4] = (uint8)((int)(32767-1000) & 0xff);
     temp[5] = (uint8)((int)(32767+1000) >> 8);
     temp[6] = (uint8)((int)(32767+1000) & 0xff);
-    */
-    
-    //int writeFlag = 0;
-    uint8 shifter_pos;
-    
-    /* UART buffer to store output to console */
-    char bufferUART[20] = {};
     
 
     /* Set up interrupt vector address for function */
-    //shifter_isr_StartEx(Shifter_ISR);
+    shifter_isr_StartEx(Shifter_ISR);
     
     CyGlobalIntEnable; /* Enable global interrupts. */
 
@@ -93,125 +89,82 @@ int main()
     
     /* Startup of the quadrature decoder block for front derailleur */
     QuadDec_Start(); 
-    QuadDec_TriggerCommand(QuadDec_MASK, QuadDec_CMD_RELOAD);
-    ref_front_count = QuadDec_ReadCounter();
-    
+    QuadDec_TriggerCommand(QuadDec_MASK, QuadDec_CMD_RELOAD);  
         
     ADC_SAR_SEQ_Start();
     ADC_SAR_SEQ_StartConvert();
     
-    //EEPROM_Write(temp, 2);
-    
+    //EEPROM_Write(temp, 2);  
     EEPROM_Read(dataI2C, 7);
-    shifter_pos = dataI2C[0];
-    int front_shift_pos = shifter_pos >> 4;
-    int rear_shift_pos = shifter_pos & 0x0fu;
     
     frntder frontd;
     frontd = frontDerailInit(dataI2C);
-
-    //sprintf(bufferUART, "Inital Shifter Position - F: %d, R: %d\n\r", front_shift_pos, rear_shift_pos);
-    //UART_UartPutString(bufferUART);
-    //sprintf(bufferUART, "bin: %d, cur: %d, tun0: %d, tun1: %d\n\r", fd.position, (uint16)(dataI2C[1]<<8)|(dataI2C[2]), fd.tuned_pos[0], fd.tuned_pos[1]);
     
-    for(;;)
+    sprintf(bufferUART, "%d, %d, %d, %d\n\r", frontd.position, frontd.current_pos, frontd.tuned_pos[0], frontd.tuned_pos[1]);
+    UART_UartPutString(bufferUART);
+    
+    //sprintf(bufferUART, "New Params - current pos: %d, small: %d, large, %d\n\r", frontd.current_pos, frontd.tuned_pos[0], frontd.tuned_pos[1]);
+    //UART_UartPutString(bufferUART);
+    
+    while(mode == 0)
     {
 
         /* Check for the shifter interrupt status variable for shift commands */
         // Front derailleur shift down
         if(shift_isr_status & (1 << 0))
-        {
-            
-            UART_UartPutString("FRONT UP\n\r");
-            if (front_shift_pos >= 1)
+        { 
+            if (frontd.position >= 1)
             {
-                front_shift_pos = 1;
+                UART_UartPutString("HI\n\r");
+                frontd.position= 1;
                 shift_isr_status &= 0xC;
             }
             else
-            {
-                
+            {   
                 front_motor_Write(FRONT_UP);
-                if(QuadDec_ReadCounter() >= ref_front_count + FRONT_UPPER_LIMIT)
+                if(QuadDec_ReadCounter() >= frontd.tuned_pos[1])
                 {  
                     front_motor_Write(STOP);
+                    frontd.current_pos = QuadDec_ReadCounter();
                     shift_isr_status &= 0xC;
-                    front_shift_pos ++;
-                
-                // Check for maximum front derialluer postion
-                //if (front_shift_pos >= 1)
-                //{
-                //    front_shift_pos = 1;
-                //}
-                // Otherwise increment the shifter position
-                //else
-                //{
-                //    front_shift_pos ++;
-                //}
-                }
-          
-            }
- 
-            //dataI2C[0] = ((front_shift_pos & 0x0fu) << 4)  | rear_shift_pos;
-            dataI2C[0] = 0;
-            EEPROM_Write(dataI2C, 3);
-            EEPROM_Read(dataI2C, 3);
-            shifter_pos = dataI2C[0];
-            front_shift_pos = shifter_pos >> 4;
-            rear_shift_pos = shifter_pos & 0x0fu;
-            sprintf(bufferUART, "Inital Shifter Position - F: %d, R: %d\n\r", front_shift_pos, rear_shift_pos);
-            UART_UartPutString(bufferUART);
-            
-            
-                
-            sprintf(bufferUART, "%lu, %lu\n\r", QuadDec_ReadCounter(), ref_front_count + FRONT_UPPER_LIMIT);
-            UART_UartPutString(bufferUART);
-                
-            //front_motor_Write(STOP);
-            //shift_isr_status &= 0xC;
-            
-
-        
+                    frontd.position ++;
+                    
+                    UART_UartPutString("FRONT UP\n\r");
+                    sprintf(bufferUART, "%d, %d, %d\n\r", frontd.position, frontd.current_pos, frontd.tuned_pos[1]);
+                    UART_UartPutString(bufferUART);
+                }         
+            } 
+            frontDerailToData(dataI2C, frontd);
+            EEPROM_Write(dataI2C, 7);
         } 
         // Front derailleur shift up
         else if (shift_isr_status & (1 << 1))
         {
-            UART_UartPutString("FRONT DN\n\r");
-            front_motor_Write(FRONT_DN);
-            if (QuadDec_ReadCounter() <= ref_front_count - FRONT_LOWER_LIMIT)
+            if(frontd.position == 0)
             {
-                front_motor_Write(STOP);
+                frontd.position = 0;
                 shift_isr_status &= 0xC;
-                
-                // Check most significant nibble for edge case or counter overflow
-                if(front_shift_pos == 0)
+            }
+            else
+            {      
+                front_motor_Write(FRONT_DN);
+                if (QuadDec_ReadCounter() <= frontd.tuned_pos[0])
                 {
-                    front_shift_pos = 0;
+                    front_motor_Write(STOP);
+                    frontd.current_pos = QuadDec_ReadCounter();
+                    shift_isr_status &= 0xC;
+                    frontd.position --;
+                    
+                    UART_UartPutString("FRONT DN\n\r");
+                    sprintf(bufferUART, "%d, %d, %d\n\r", frontd.position, frontd.current_pos, frontd.tuned_pos[0]);
+                    UART_UartPutString(bufferUART);
                 }
-                else if (front_shift_pos >= 2)
-                {
-                    front_shift_pos = 0;
-                }
-                // Otherwise decrement the shifter position
-                else
-                {
-                    front_shift_pos --;
-                }
-                dataI2C[0] = ((front_shift_pos & 0x0fu) << 4)  | rear_shift_pos;
-                EEPROM_Write(dataI2C, 3);
-                
-                EEPROM_Read(dataI2C, 3);
-                shifter_pos = dataI2C[0];
-                front_shift_pos = shifter_pos >> 4;
-                rear_shift_pos = shifter_pos & 0x0fu;
-                
-                sprintf(bufferUART, "Inital Shifter Position - F: %d, R: %d\n\r", front_shift_pos, rear_shift_pos);
-                UART_UartPutString(bufferUART);
-                sprintf(bufferUART, "%lu, %lu\n\r", QuadDec_ReadCounter(), ref_front_count - FRONT_UPPER_LIMIT);
-                UART_UartPutString(bufferUART);
+                frontDerailToData(dataI2C, frontd);
+                EEPROM_Write(dataI2C, 7);
             } 
         }
         
+        /*
         // Rear derailleur shift up
         else if (shift_isr_status & (1 << 2))
         {
@@ -261,8 +214,79 @@ int main()
             }
             dataI2C[0] = shifter_pos;
             EEPROM_Write(dataI2C, 15);
+        
+        }
+        */
+    }
+    int count = 0;
+    while (mode == 1)
+    {
+        // Var to keep track of tuning steps
+        
+        // Inital output of user instructions
+        if (count == 0)
+        {
+            UART_UartPutString("Small Chainring, Press SPACE to set position!!!\n\r");
+            frontd.current_pos = QuadDec_ReadCounter();
+            frontd.position = 0;
+            count = 1;
         }
         
+        // Poll for the SPACE key input to set front derailleur tuning paramteters. 
+        char input = UART_UartGetChar();
+        if (input == 0x20)
+        {
+            if (count == 1)
+            {
+                frontd.tuned_pos[0] = frontd.current_pos;
+                frontd.position = 0;
+                frontDerailToData(dataI2C, frontd);
+                EEPROM_Write(dataI2C, 7);
+                count = 2;
+                sprintf(bufferUART, "Small Chainring Position Set: %d\n\r", frontd.tuned_pos[0]);
+                UART_UartPutString(bufferUART);
+                UART_UartPutString("Large Chainring, Press SPACE to set position\n\r");
+                frontd.position = 1;
+                
+            }
+            else if (count == 2)
+            {
+                frontd.tuned_pos[1] = frontd.current_pos;
+                frontd.position = 1;
+                frontDerailToData(dataI2C, frontd);
+                EEPROM_Write(dataI2C, 7);
+                count = 3;
+                sprintf(bufferUART, "Large Chainring Position Set: %d\n\r", frontd.tuned_pos[1]);
+                UART_UartPutString(bufferUART);
+                UART_UartPutString("Tuning Complete, Press SPACE to finish\n\r");
+                sprintf(bufferUART, "%d, %d, %d, %d\n\r", frontd.position, frontd.current_pos, frontd.tuned_pos[0], frontd.tuned_pos[1]);
+                UART_UartPutString(bufferUART);
+            }
+            else if (count == 3)
+            {
+            }
+        }
+        
+        if(shift_isr_status & (1 << 0))
+        {
+            front_motor_Write(FRONT_UP);
+            CyDelay(100);
+            front_motor_Write(STOP);
+            frontd.current_pos = QuadDec_ReadCounter();
+            shift_isr_status &= 0xC;
+            sprintf(bufferUART, "%d, %d, %d, %d\n\r", frontd.position, frontd.current_pos, frontd.tuned_pos[0], frontd.tuned_pos[1]);
+            UART_UartPutString(bufferUART);
+        }
+        if(shift_isr_status & (1 << 1))
+        {
+            front_motor_Write(FRONT_DN);
+            CyDelay(100);
+            front_motor_Write(STOP);
+            frontd.current_pos = QuadDec_ReadCounter();
+            shift_isr_status &= 0xC;
+            sprintf(bufferUART, "%d, %d, %d, %d\n\r", frontd.position, frontd.current_pos, frontd.tuned_pos[0], frontd.tuned_pos[1]);
+            UART_UartPutString(bufferUART);
+        }
     }
 }
 
@@ -313,6 +337,17 @@ frntder frontDerailInit(uint8* dataI2C)
     return fd;
 }
 
+void frontDerailToData(uint8* dataI2C, frntder fd)
+{
+    dataI2C[0] = fd.position;
+    dataI2C[1] = (uint8)(fd.current_pos >> 8);
+    dataI2C[2] = (uint8)(fd.current_pos & 0xff);
+    dataI2C[3] = (uint8)(fd.tuned_pos[0] >> 8);
+    dataI2C[4] = (uint8)(fd.tuned_pos[0] & 0xff);
+    dataI2C[5] = (uint8)(fd.tuned_pos[1] >> 8);
+    dataI2C[6] = (uint8)(fd.tuned_pos[1] & 0xff);
+}
+
 /* This function writes to an EEPROM. The offset pointer to the EEPROM is fixed by this function to 0x00,0x00. 
 To change the write location, OffsetAddress values can be changed*/
 void EEPROM_Write(uint8* Data, int numBytes)
@@ -336,10 +371,7 @@ void EEPROM_Write(uint8* Data, int numBytes)
 			break;
 		}
 					
-	}
-    //sprintf(bufferUART, "Write - F: %d, R: %d\n\r", writeData[0], writeData[1]);
-    //UART_UartPutString(bufferUART);
-	
+	}	
 }
 
 /* This fuction reads data from the EEPROM from offset pointer location 0x00, 0x00. The value of 
@@ -355,10 +387,8 @@ void EEPROM_Read(uint8* Data, int numBytes)
 		if(0u != (I2C_I2CMasterStatus() & I2C_I2C_MSTAT_WR_CMPLT))
 		{
 			break;
-		}
-			
-	}
-	
+		}		
+	}	
 	numBytes = 13;
 	I2C_I2CMasterReadBuf(ADDRESS1, (uint8 *) Data, numBytes, I2C_I2C_MODE_REPEAT_START ); 
 
@@ -369,8 +399,6 @@ void EEPROM_Read(uint8* Data, int numBytes)
 			break;
 		}
 	}
-    //sprintf(bufferUART, "REad - F: %d, R: %d\n\r", Data[0], Data[1]);
-    //UART_UartPutString(bufferUART);
 }
 
 
