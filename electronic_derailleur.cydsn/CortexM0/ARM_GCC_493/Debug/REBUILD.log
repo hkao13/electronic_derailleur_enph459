@@ -1,0 +1,19 @@
+--------------- Rebuild Started: 03/27/2016 22:47:17 Project: main.c, Configuration: ARM GCC 4.9-2015-q1-update Debug ---------------
+arm-none-eabi-gcc.exe -mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=.\CortexM0\ARM_GCC_493\Debug/main.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects -c .\main.c -o .\CortexM0\ARM_GCC_493\Debug\main.o
+.\main.c: In function 'main':
+.\main.c:221:9: error: expected ';' before 'sprintf'
+         sprintf(bufferUART, "amps: %d\n\r", ADC_SAR_SEQ_GetResult16(0x00)*1);
+         ^
+.\main.c:63:11: warning: variable 'temp' set but not used [-Wunused-but-set-variable]
+     uint8 temp[] = {};
+           ^
+.\main.c: In function 'EEPROM_Write':
+.\main.c:359:9: warning: unused variable 'offsetAddress' [-Wunused-variable]
+     int offsetAddress[2]={0,0};
+         ^
+.\main.c: In function 'main':
+.\main.c:294:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+The command 'arm-none-eabi-gcc.exe' failed with exit code '1'.
+--------------- Rebuild Failed: 03/27/2016 22:47:17 ---------------

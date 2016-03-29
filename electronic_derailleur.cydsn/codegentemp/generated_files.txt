@@ -92,6 +92,13 @@
   <file name="C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\codegentemp\I2C_I2C_PVT.h" value="NONE;I2C" />
   <file name="C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\codegentemp\I2C_PVT.h" value="NONE;I2C" />
   <file name="C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\codegentemp\I2C_BOOT.h" value="NONE;I2C" />
+  <file name="C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\codegentemp\timer_isr.c" value="ARM_C_FILE;timer_isr" />
+  <file name="C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\codegentemp\timer_isr.h" value="NONE;timer_isr" />
+  <file name="C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\codegentemp\timer_clock.c" value="ARM_C_FILE;timer_clock" />
+  <file name="C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\codegentemp\timer_clock.h" value="NONE;timer_clock" />
+  <file name="C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\codegentemp\Timer.c" value="ARM_C_FILE;Timer" />
+  <file name="C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\codegentemp\Timer.h" value="NONE;Timer" />
+  <file name="C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\codegentemp\Timer_PM.c" value="ARM_C_FILE;Timer" />
   <file name="C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\codegentemp\UART_SCBCLK.c" value="ARM_C_FILE;UART_SCBCLK" />
   <file name="C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\codegentemp\UART_SCBCLK.h" value="NONE;UART_SCBCLK" />
   <file name="C:\Users\Henry\Projects\electronic_derailleur_enph459\electronic_derailleur.cydsn\codegentemp\UART_tx.c" value="ARM_C_FILE;UART_tx" />
